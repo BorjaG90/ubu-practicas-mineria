@@ -199,6 +199,27 @@
                 "exectime":7065,
                 "nrcreated":1,
                 "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.base.node.preproc.split2.SplitNodeFactory2#Column Splitter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.matcher.SubsetMatcherNodeFactory#Subset Matcher",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.targetshuffling.TargetShufflingNodeFactory#Target Shuffling",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":2,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
             }
         ],
         "metaNodes":{
@@ -206,9 +227,9 @@
         "wrappedNodes":{
         }
     },
-    "uptime":6563862,
-    "launches":6,
-    "timeSinceLastStart":2207887,
+    "uptime":6121509,
+    "launches":7,
+    "timeSinceLastStart":3467393,
     "crashes":0,
-    "properlyShutDown":true
+    "properlyShutDown":false
 }

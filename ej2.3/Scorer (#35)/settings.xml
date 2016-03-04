@@ -48,13 +48,13 @@
 <entry key="type" type="xstring" value="variable"/>
 <entry key="name" type="xstring" value="#Correct"/>
 <entry key="class" type="xstring" value="INTEGER"/>
-<entry key="value" type="xint" value="40"/>
+<entry key="value" type="xint" value="10"/>
 </config>
 <config key="Variable_8">
 <entry key="type" type="xstring" value="variable"/>
 <entry key="name" type="xstring" value="#False"/>
 <entry key="class" type="xstring" value="INTEGER"/>
-<entry key="value" type="xint" value="80"/>
+<entry key="value" type="xint" value="20"/>
 </config>
 <config key="Variable_9">
 <entry key="type" type="xstring" value="variable"/>
@@ -108,6 +108,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="c3e8e1ce-e853-4dd0-becc-f4d10bffc19a"/>
+<entry key="file_store_id" type="xstring" value="a48b01b4-1055-4356-850b-03e022efc15e"/>
 </config>
 </config>
