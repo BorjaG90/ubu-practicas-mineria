@@ -1,2 +1,0 @@
-file:/D:/Projects/Java/knime-workspace/datasets/Iris.arff
-file:/D:/Projects/Java/knime-workspace/datasets/vehicle.arff

@@ -1,8 +1,0 @@
-file:/E:/AppData/Local/Temp/knime_temp_space_petkov_79548/003003_JavaSnippet79556/003003_JavaSnippet/File%20Reader%20(%231)/drop/data.all
-file:/Users/Aaron/Desktop/demospace/003003_JavaSnippet/File%20Reader%20(%231)/drop/data.all
-file:/Users/Aaron/Dropbox/Workspaces/working/Public%20Examples/003001_SimpleFlow_with_Statistics/File%20Reader%20(%231)/drop/adult.data
-file:/E:/AppData/Local/Temp/knime_temp_space_petkov_79548/003002_StandardPreprocessing79550/003002_StandardPreprocessing/File%20Reader%20(%231)/drop/adult.data
-file:/Users/Aaron/Dropbox/Workspaces/working/Public%20Examples/003002_StandardPreprocessing/File%20Reader%20(%231)/drop/adult.data
-knime://knime.workflow/data.all
-file:/E:/AppData/Local/Temp/knime_temp_space_petkov_42562/003002_StandardPreprocessing42578/003002_StandardPreprocessing/File%20Reader%20(%231)/drop/adult.data
-file:/E:/AppData/Local/Temp/knime_temp_space_petkov_42562/003003_JavaSnippet42575/003003_JavaSnippet/File%20Reader%20(%231)/drop/data.all
