@@ -1,0 +1,214 @@
+
+{
+    "version":"3.1.1.v201601291159",
+    "created":"2016-02-22 18:19",
+    "nodestats":{
+        "nodes":[
+            {
+                "id":"org.knime.base.node.io.arffreader.ARFFReaderNodeFactory#ARFF Reader",
+                "nrexecs":24,
+                "exectime":835,
+                "nrcreated":1,
+                "successor":"org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning"
+            },
+            {
+                "id":"org.knime.base.node.viz.property.color.ColorManager2NodeFactory#Color Manager",
+                "nrexecs":24,
+                "exectime":116,
+                "nrcreated":2,
+                "successor":"org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning"
+            },
+            {
+                "id":"org.knime.base.node.stats.viz.extended.ExtendedStatisticsNodeFactory#Statistics",
+                "nrexecs":1,
+                "exectime":1158,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning",
+                "nrexecs":39,
+                "exectime":1284,
+                "nrcreated":3,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.base.node.viz.plotter.scattermatrix.ScatterMatrixNodeFactory#Scatter Matrix",
+                "nrexecs":3,
+                "exectime":28,
+                "nrcreated":3,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.viz.plotter.scatter.ScatterPlotterNodeFactory#Scatter Plot",
+                "nrexecs":2,
+                "exectime":61,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.ext.ssh.node.ExtSSHToolNodeFactory#External SSH Tool",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.ext.weka37.classifier.WekaClassifierNodeFactory#ZeroR (3.7)",
+                "nrexecs":51,
+                "exectime":1265,
+                "nrcreated":2,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.ext.weka37.classifier.WekaClassifierNodeFactory#JRip (3.7)",
+                "nrexecs":48,
+                "exectime":2037,
+                "nrcreated":2,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.ext.weka37.classifier.WekaClassifierNodeFactory#IBk (3.7)",
+                "nrexecs":48,
+                "exectime":1404,
+                "nrcreated":2,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.base.node.preproc.sample.SamplingNodeFactory#Row Sampling",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":2,
+                "successor":"org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning"
+            },
+            {
+                "id":"org.knime.ext.weka37.classifier.WekaClassifierNodeFactory#J48 (3.7)",
+                "nrexecs":48,
+                "exectime":1669,
+                "nrcreated":1,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)",
+                "nrexecs":187,
+                "exectime":16513,
+                "nrcreated":2,
+                "successor":"org.knime.base.node.mine.scorer.accuracy.AccuracyScorerNodeFactory#Scorer"
+            },
+            {
+                "id":"org.knime.base.node.mine.scorer.accuracy.AccuracyScorerNodeFactory#Scorer",
+                "nrexecs":195,
+                "exectime":3078,
+                "nrcreated":3,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.normalize3.Normalizer3NodeFactory#Normalizer",
+                "nrexecs":30,
+                "exectime":330,
+                "nrcreated":5,
+                "successor":"org.knime.base.node.preproc.normalize.NormalizerApplyNodeFactory#Normalizer (Apply)"
+            },
+            {
+                "id":"org.knime.base.node.preproc.normalize.NormalizerApplyNodeFactory#Normalizer (Apply)",
+                "nrexecs":29,
+                "exectime":772,
+                "nrcreated":6,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            },
+            {
+                "id":"org.knime.ext.jfc.node.scatterplot.JfcScatterPlotNodeFactory#Scatter Plot (JFreeChart)",
+                "nrexecs":2,
+                "exectime":644,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.rowsplit.NumericRowSplitterNodeFactory#Numeric Row Splitter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.filter.column.DataColumnSpecFilterNodeFactory#Column Filter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":2,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.pmml.missingval.compute.MissingValueHandlerNodeFactory#Missing Value",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.columnrename.DBColumnRenameNodeFactory#Database Column Rename",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.DBRowFilterNodeFactory#Database Row Filter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.io.database.sampling.DBSamplingNodeFactory#Database Sampling",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.filter.columnref.ColumnFilterRefNodeFactory#Reference Column Filter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.filter.columnref.ColumnSplitRefNodeFactory#Reference Column Splitter",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.bootstrap.BootstrapNodeFactory#Bootstrap Sampling",
+                "nrexecs":0,
+                "exectime":0,
+                "nrcreated":1,
+                "successor":"n/a"
+            },
+            {
+                "id":"org.knime.base.node.preproc.autobinner3.AutoBinnerLearnNodeFactory#Auto-Binner",
+                "nrexecs":10,
+                "exectime":286,
+                "nrcreated":1,
+                "successor":"org.knime.ext.weka37.classifier.WekaClassifierNodeFactory#ZeroR (3.7)"
+            },
+            {
+                "id":"org.knime.base.node.preproc.autobinner.apply.AutoBinnerApplyNodeFactory#Auto-Binner (Apply)",
+                "nrexecs":13,
+                "exectime":7065,
+                "nrcreated":1,
+                "successor":"org.knime.ext.weka37.predictor3.WekaPredictorNodeFactory#Weka Predictor (3.7)"
+            }
+        ],
+        "metaNodes":{
+        },
+        "wrappedNodes":{
+        }
+    },
+    "uptime":6563862,
+    "launches":6,
+    "timeSinceLastStart":2207887,
+    "crashes":0,
+    "properlyShutDown":true
+}

@@ -1,0 +1,3 @@
+jdbc:sqlite:E:\AppData\Local\Temp\knime_temp_space_petkov_42562\004001_Database_SimpleIO42571\004001_Database_SimpleIO\db.sqlite
+
+jdbc:sqlite:/Users/knime/Documents/Workspaces/Comcast/004001_Database_SimpleIO/db.sqlite
