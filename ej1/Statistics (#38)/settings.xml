@@ -11,6 +11,16 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="compute_median" type="xboolean" value="false"/>
+<config key="num_nominal-values_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="num_nominal-values" type="xint" value="20"/>
+<config key="num_nominal-values_output_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="num_nominal-values_output" type="xint" value="1000"/>
 <config key="filter_nominal_columns_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_columnfilter"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -59,21 +69,6 @@
 </config>
 </config>
 </config>
-<config key="num_nominal-values_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="num_nominal-values" type="xint" value="20"/>
-<config key="num_nominal-values_output_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="num_nominal-values_output" type="xint" value="1000"/>
-<config key="enable HiLite_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="enable HiLite" type="xboolean" value="false"/>
 <config key="image format_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -89,6 +84,11 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="histogram height" type="xint" value="100"/>
+<config key="enable HiLite_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="enable HiLite" type="xboolean" value="false"/>
 <config key="show min max_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -136,6 +136,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="47614455-5bdc-4e84-89d9-fb551bd3b6b2"/>
+<entry key="file_store_id" type="xstring" value="56267a54-3dde-48ce-a7ca-d03fa0262b2f"/>
 </config>
 </config>
