@@ -11,16 +11,6 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="compute_median" type="xboolean" value="false"/>
-<config key="num_nominal-values_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="num_nominal-values" type="xint" value="20"/>
-<config key="num_nominal-values_output_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="num_nominal-values_output" type="xint" value="1000"/>
 <config key="filter_nominal_columns_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_columnfilter"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -29,28 +19,19 @@
 <entry key="filter-type" type="xstring" value="STANDARD"/>
 <config key="included_names">
 <entry key="array-size" type="xint" value="1"/>
-<entry key="0" type="xstring" value="Class"/>
+<entry key="0" type="xstring" value="class"/>
 </config>
 <config key="excluded_names">
-<entry key="array-size" type="xint" value="18"/>
-<entry key="0" type="xstring" value="COMPACTNESS"/>
-<entry key="1" type="xstring" value="CIRCULARITY"/>
-<entry key="2" type="xstring" value="DISTANCE CIRCULARITY"/>
-<entry key="3" type="xstring" value="RADIUS RATIO"/>
-<entry key="4" type="xstring" value="PR.AXIS ASPECT RATIO"/>
-<entry key="5" type="xstring" value="MAX.LENGTH ASPECT RATIO"/>
-<entry key="6" type="xstring" value="SCATTER RATIO"/>
-<entry key="7" type="xstring" value="ELONGATEDNESS"/>
-<entry key="8" type="xstring" value="PR.AXIS RECTANGULARITY"/>
-<entry key="9" type="xstring" value="MAX.LENGTH RECTANGULARITY"/>
-<entry key="10" type="xstring" value="SCALED VARIANCE_MAJOR"/>
-<entry key="11" type="xstring" value="SCALED VARIANCE_MINOR"/>
-<entry key="12" type="xstring" value="SCALED RADIUS OF GYRATION"/>
-<entry key="13" type="xstring" value="SKEWNESS ABOUT_MAJOR"/>
-<entry key="14" type="xstring" value="SKEWNESS ABOUT_MINOR"/>
-<entry key="15" type="xstring" value="KURTOSIS ABOUT_MAJOR"/>
-<entry key="16" type="xstring" value="KURTOSIS ABOUT_MINOR"/>
-<entry key="17" type="xstring" value="HOLLOWS RATIO"/>
+<entry key="array-size" type="xint" value="9"/>
+<entry key="0" type="xstring" value="clump_thickness"/>
+<entry key="1" type="xstring" value="uniformity_cell_size"/>
+<entry key="2" type="xstring" value="uniformity_cell_shape"/>
+<entry key="3" type="xstring" value="marginal_adhesion"/>
+<entry key="4" type="xstring" value="single_epithelial_cell_size"/>
+<entry key="5" type="xstring" value="bare_nuclei"/>
+<entry key="6" type="xstring" value="bland_chromatin"/>
+<entry key="7" type="xstring" value="normal_nucleoli"/>
+<entry key="8" type="xstring" value="mitoses"/>
 </config>
 <entry key="enforce_option" type="xstring" value="EnforceInclusion"/>
 <config key="name_pattern">
@@ -69,6 +50,21 @@
 </config>
 </config>
 </config>
+<config key="num_nominal-values_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="num_nominal-values" type="xint" value="20"/>
+<config key="num_nominal-values_output_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_integer"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="num_nominal-values_output" type="xint" value="1000"/>
+<config key="enable HiLite_Internals">
+<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
+<entry key="EnabledStatus" type="xboolean" value="true"/>
+</config>
+<entry key="enable HiLite" type="xboolean" value="false"/>
 <config key="image format_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_string"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -84,11 +80,6 @@
 <entry key="EnabledStatus" type="xboolean" value="true"/>
 </config>
 <entry key="histogram height" type="xint" value="100"/>
-<config key="enable HiLite_Internals">
-<entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
-<entry key="EnabledStatus" type="xboolean" value="true"/>
-</config>
-<entry key="enable HiLite" type="xboolean" value="false"/>
 <config key="show min max_Internals">
 <entry key="SettingsModelID" type="xstring" value="SMID_boolean"/>
 <entry key="EnabledStatus" type="xboolean" value="true"/>
@@ -116,7 +107,7 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 18, Cols: 16"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 0, Cols: 16"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 <config key="port_2">
@@ -130,12 +121,12 @@
 <entry key="index" type="xint" value="3"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 4, Cols: 2"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 2, Cols: 2"/>
 <entry key="port_dir_location" type="xstring" value="port_3"/>
 </config>
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="56267a54-3dde-48ce-a7ca-d03fa0262b2f"/>
+<entry key="file_store_id" type="xstring" value="f659a66f-cf91-4c32-8146-ba9ee2b60ef4"/>
 </config>
 </config>

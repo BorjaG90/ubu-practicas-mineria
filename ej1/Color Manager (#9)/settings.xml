@@ -6,36 +6,22 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="selected_column" type="xstring" value="Class"/>
+<entry key="selected_column" type="xstring" value="class"/>
 <entry key="is_nominal" type="xboolean" value="true"/>
-<entry key="opel" type="xint" value="-65536"/>
-<entry key="saab" type="xint" value="-8323328"/>
-<entry key="bus" type="xint" value="-16711681"/>
-<entry key="van" type="xint" value="-8388353"/>
+<entry key="2" type="xint" value="-16738048"/>
+<entry key="4" type="xint" value="-52480"/>
 <config key="values">
-<entry key="array-size" type="xint" value="4"/>
+<entry key="array-size" type="xint" value="2"/>
 <config key="0">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
 <config key="org.knime.core.data.def.StringCell">
-<entry key="StringCell" type="xstring" value="opel"/>
+<entry key="StringCell" type="xstring" value="2"/>
 </config>
 </config>
 <config key="1">
 <entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
 <config key="org.knime.core.data.def.StringCell">
-<entry key="StringCell" type="xstring" value="saab"/>
-</config>
-</config>
-<config key="2">
-<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
-<config key="org.knime.core.data.def.StringCell">
-<entry key="StringCell" type="xstring" value="bus"/>
-</config>
-</config>
-<config key="3">
-<entry key="datacell" type="xstring" value="org.knime.core.data.def.StringCell"/>
-<config key="org.knime.core.data.def.StringCell">
-<entry key="StringCell" type="xstring" value="van"/>
+<entry key="StringCell" type="xstring" value="4"/>
 </config>
 </config>
 </config>
@@ -61,14 +47,14 @@
 <entry key="index" type="xint" value="1"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.BufferedDataTable"/>
-<entry key="port_object_summary" type="xstring" value="Rows: 846, Cols: 19"/>
+<entry key="port_object_summary" type="xstring" value="Rows: 699, Cols: 10"/>
 <entry key="port_dir_location" type="xstring" value="port_1"/>
 </config>
 <config key="port_2">
 <entry key="index" type="xint" value="2"/>
 <entry key="port_spec_class" type="xstring" value="org.knime.core.data.DataTableSpec"/>
 <entry key="port_object_class" type="xstring" value="org.knime.core.node.port.viewproperty.ColorHandlerPortObject"/>
-<entry key="port_object_summary" type="xstring" value="Coloring on &quot;Class&quot;"/>
+<entry key="port_object_summary" type="xstring" value="Coloring on &quot;class&quot;"/>
 <entry key="port_spec_location" type="xstring" value="spec/spec.zip"/>
 <entry key="port_object_location" type="xstring" value="object/portobject.zip"/>
 <entry key="port_dir_location" type="xstring" value="port_2"/>
@@ -76,6 +62,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="c702b46d-f3b7-4be5-899c-69d2b7fa550b"/>
+<entry key="file_store_id" type="xstring" value="1ca05de7-ae98-4b91-b89b-8f413983f6f8"/>
 </config>
 </config>

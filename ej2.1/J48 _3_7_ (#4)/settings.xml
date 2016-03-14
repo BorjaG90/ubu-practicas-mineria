@@ -6,7 +6,7 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="ClassColumn" type="xstring" value="class"/>
+<entry key="ClassColumn" type="xstring" value="Class"/>
 <config key="weka-optionhandler-settings">
 <entry key="-C_(#0)" type="xstring" value="0.25"/>
 <entry key="-M_(#1)" type="xstring" value="2"/>
@@ -22,10 +22,10 @@
 <entry key="node-bundle-symbolic-name" type="xstring" value="org.knime.ext.weka_3.7"/>
 <entry key="node-bundle-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
 <entry key="node-bundle-version" type="xstring" value="3.1.1.v201601281239"/>
-<entry key="node-feature-name" type="xstring" isnull="true" value=""/>
-<entry key="node-feature-symbolic-name" type="xstring" isnull="true" value=""/>
-<entry key="node-feature-vendor" type="xstring" isnull="true" value=""/>
-<entry key="node-feature-version" type="xstring" value="0.0.0"/>
+<entry key="node-feature-name" type="xstring" value="KNIME Weka Data Mining Integration (3.7)"/>
+<entry key="node-feature-symbolic-name" type="xstring" value="org.knime.features.ext.weka_3.7.feature.group"/>
+<entry key="node-feature-vendor" type="xstring" value="KNIME GmbH, Konstanz, Germany"/>
+<entry key="node-feature-version" type="xstring" value="3.1.1.v201601281239"/>
 <config key="factory_settings">
 <entry key="weka-class" type="xstring" value="weka.classifiers.trees.J48"/>
 <entry key="weka-version" type="xstring" value="3.7"/>
@@ -47,6 +47,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="3409863e-d48b-4da9-bfa8-5e837f4d5008"/>
+<entry key="file_store_id" type="xstring" value="3fb15cd8-0f4f-4e72-b5a4-c7ffeba06d48"/>
 </config>
 </config>

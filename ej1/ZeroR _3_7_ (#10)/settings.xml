@@ -6,7 +6,7 @@
 <entry key="memory_policy" type="xstring" value="CacheSmallInMemory"/>
 </config>
 <config key="model">
-<entry key="ClassColumn" type="xstring" value="Class"/>
+<entry key="ClassColumn" type="xstring" value="class"/>
 <config key="weka-optionhandler-settings">
 <entry key="options_list_with_placeholders" type="xstring" value=""/>
 <entry key="additional_options" type="xstring" value=""/>
@@ -45,6 +45,6 @@
 </config>
 <config key="filestores">
 <entry key="file_store_location" type="xstring" isnull="true" value=""/>
-<entry key="file_store_id" type="xstring" value="dd7f765f-2326-46c4-aea6-d1f65b3db4a7"/>
+<entry key="file_store_id" type="xstring" value="e0539be8-b4af-4282-90d5-9f514fc807f5"/>
 </config>
 </config>
