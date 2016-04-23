@@ -1,6 +1,0 @@
-algorithm = InstanceSelection
-inputData = "../datasets/poker-5-fold/poker-5-2tra.dat" "../datasets/poker-5-fold/poker-5-2tra.dat" "../datasets/poker-5-fold/poker-5-2tst.dat" 
-outputData = "../datasets/poker-5-fold-IS/poker-5-2-IS.tra" "../datasets/poker-5-fold-IS/poker-5-2-IS.tst" 
-
-percentage = 80
-equalDistribution = True
