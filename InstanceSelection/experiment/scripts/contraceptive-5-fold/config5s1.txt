@@ -1,0 +1,6 @@
+algorithm = InstanceSelection
+inputData = "../datasets/contraceptive-5-fold/contraceptive-5-1tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-1tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-1tst.dat" 
+outputData = "../datasets/contraceptive-5-fold-IS/contraceptive-5-1-IS.tra" "../datasets/contraceptive-5-fold-IS/contraceptive-5-1-IS.tst" 
+
+percentage = 80
+equalDistribution = True
