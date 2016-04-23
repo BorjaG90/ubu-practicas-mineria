@@ -1,0 +1,6 @@
+algorithm = InstanceSelection
+inputData = "../datasets/movement_libras-5-fold/movement_libras-5-3tra.dat" "../datasets/movement_libras-5-fold/movement_libras-5-3tra.dat" "../datasets/movement_libras-5-fold/movement_libras-5-3tst.dat" 
+outputData = "../datasets/movement_libras-5-fold-IS/movement_libras-5-3-IS.tra" "../datasets/movement_libras-5-fold-IS/movement_libras-5-3-IS.tst" 
+
+percentage = 80
+equalDistribution = True
