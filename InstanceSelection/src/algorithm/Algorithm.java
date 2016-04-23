@@ -81,6 +81,8 @@ public class Algorithm {
          */
         percentage = Double.parseDouble(parameters.getParameter(0));
         equalDistribution = Boolean.parseBoolean(parameters.getParameter(1));
+        System.out.println("\nPercentage: " + percentage);
+        System.out.println("Equal distribution: " + equalDistribution);
     }
 
     /**
@@ -96,13 +98,16 @@ public class Algorithm {
             //nClasses = train.getnOutputs();
         	
         	// Listas con los indices de las instancias de interes
+        	System.out.println("Processing training dataset...");
         	List<Integer> trainIndexes = selectInstances(train);
+        	
+        	System.out.println("Processing test dataset...");
         	List<Integer> testIndexes = selectInstances(test);
             
             //Finally we should fill the training and test output files
             doOutput(this.train, trainIndexes, this.outputTr);
             doOutput(this.test, testIndexes, this.outputTst);
-
+            
             System.out.println("Algorithm Finished");
         }
     }
@@ -155,8 +160,6 @@ public class Algorithm {
     	}
     	return dict;
     }
-    
-    // TODO: REHACER LOS METODOS doOutput y classificationOutput !!!
     
     /**
      * Selecciona al azar un porcentaje de los indices correspondientes a
