@@ -35,7 +35,7 @@ public class myDataset {
   private int nInputs; // Number of inputs
   private int nClasses; // Number of outputs
 
-  private InstanceSet IS; //The whole instance set
+  public InstanceSet IS; //The whole instance set
 
   private double stdev[], average[]; //standard deviation and average of each attribute
   private int instancesCl[];

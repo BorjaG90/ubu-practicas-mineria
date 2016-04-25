@@ -20,6 +20,8 @@ import java.util.Map;
 
 import org.core.*;
 
+import keel.dataset.*;
+
 public class Algorithm {
 
     myDataset train, val, test;
@@ -99,17 +101,28 @@ public class Algorithm {
         	
         	// Listas con los indices de las instancias de interes
         	System.out.println("Processing training dataset...");
-        	List<Integer> trainIndexes = selectInstances(train);
+        	writeSelected(selectInstances(train), train, outputTr);
+        	        	
         	
         	System.out.println("Processing test dataset...");
-        	List<Integer> testIndexes = selectInstances(test);
+//        	List<Integer> testIndexes = selectInstances(test);
+        	writeSelected(selectInstances(test), test, outputTst);
+
             
             //Finally we should fill the training and test output files
-            doOutput(this.train, trainIndexes, this.outputTr);
-            doOutput(this.test, testIndexes, this.outputTst);
+            //doOutput(this.train, this.outputTr);
+            //doOutput(this.test, this.outputTst);
             
             System.out.println("Algorithm Finished");
         }
+    }
+    
+    private void writeSelected(List<Integer> indexes, myDataset dataset, String filename) {
+    	String output = dataset.copyHeader();
+    	for(Integer index :indexes)
+    		output += dataset.IS.getInstance(index) + "\n";
+    	
+    	Files.writeFile(filename, output);
     }
     
     /**
@@ -126,7 +139,7 @@ public class Algorithm {
     	Map<String, List<Integer>> dict =
     			mapIndexesToClasses(dataset.getOutputAsString());
     	List<Integer> selected= new ArrayList<Integer>();
-    	
+    	    	
     	if(equalDistribution) {
     		// Selecciona el porcentaje de indices de instancias de cada clase
     		// y los agrega a una lista
@@ -186,14 +199,14 @@ public class Algorithm {
      * @param indexes list of indexes corresponding to a subset of instances
      * @param filename String the name of the file
      */
-    private void doOutput(myDataset dataset, List<Integer> indexes, String filename) {
+    private void doOutput(myDataset dataset, String filename) {
         String output = new String("");
         output = dataset.copyHeader(); //we insert the header in the output file
         //We write the output for each example
-        for (int index : indexes) {
+        for (int i = 0; i < dataset.getnData(); i++) {
             //for classification:
-            output += dataset.getOutputAsString(index) + " " +
-                    this.classificationOutput(dataset.getExample(index)) + "\n";
+            output += dataset.getOutputAsString(i) + " " +
+            		this.classificationOutput(dataset.getExample(i)) + "\n";
         //for regression:
         //output += dataset.getOutputAsReal(i) + " " +(double)this.regressionOutput(dataset.getExample(i)) + "\n";
                     
