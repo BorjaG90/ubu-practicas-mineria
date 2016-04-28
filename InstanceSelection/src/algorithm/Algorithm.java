@@ -96,35 +96,16 @@ public class Algorithm {
             System.err.println("Aborting the program");
             //We should not use the statement: System.exit(-1);
         } else {
-            //We do here the algorithm's operations        	
-            //nClasses = train.getnOutputs();
-        	
-        	// Listas con los indices de las instancias de interes
-        	System.out.println("Processing training dataset...");
+        	System.out.println("\nProcessing training dataset...");
         	writeSelected(selectInstances(train), train, outputTr);
-        	        	
         	
-        	System.out.println("Processing test dataset...");
-//        	List<Integer> testIndexes = selectInstances(test);
+        	System.out.println("\nProcessing test dataset...");
         	writeSelected(selectInstances(test), test, outputTst);
-
             
-            //Finally we should fill the training and test output files
-            //doOutput(this.train, this.outputTr);
-            //doOutput(this.test, this.outputTst);
-            
-            System.out.println("Algorithm Finished");
+            System.out.println("\nAlgorithm Finished");
         }
     }
-    
-    private void writeSelected(List<Integer> indexes, myDataset dataset, String filename) {
-    	String output = dataset.copyHeader();
-    	for(Integer index :indexes)
-    		output += dataset.IS.getInstance(index) + "\n";
-    	
-    	Files.writeFile(filename, output);
-    }
-    
+      
     /**
      * Selecciona las instancias de forma aleatoria en funcion del porcentaje
      * y de si hay igual distribucion. Las instancias se seleccionan a traves de
@@ -135,41 +116,47 @@ public class Algorithm {
      */
     private List<Integer> selectInstances(myDataset dataset) {
     	
-    	// Diccionario con los indices de las instancias de cada clase
-    	Map<String, List<Integer>> dict =
-    			mapIndexesToClasses(dataset.getOutputAsString());
-    	List<Integer> selected= new ArrayList<Integer>();
+		Map<String, List<Integer>> before;
+		Map<String, List<Integer>> after;
+		
+    	List<Integer> allIndexes = new ArrayList<Integer>();    	
+    	List<Integer> selected = new ArrayList<Integer>();
     	    	
+    	// Añade todos los indices de instancias a una lista 
+    	for(int i = 0; i < dataset.getnData(); i++)
+    		allIndexes.add(i);
+    	
+		before = mapIndexesToClasses(allIndexes, dataset.getOutputAsString());
     	if(equalDistribution) {
-    		// Selecciona el porcentaje de indices de instancias de cada clase
-    		// y los agrega a una lista
-        	for(String classLabel : dataset.getClasses())
-        		selected.addAll(randomSelection(dict.get(classLabel)));
-    	} else {
-    		// Agrega todos los indices de todas las instancias a una lista
     		for(String classLabel : dataset.getClasses())
-    			selected.addAll(dict.get(classLabel));
-    		// Selecciona un porcentaje de todos los indices de instancias
-    		selected = randomSelection(selected);
-    	}
+        		selected.addAll(randomSelection(before.get(classLabel)));
+    	} else
+    		selected.addAll(randomSelection(allIndexes));
+    	
+		after = mapIndexesToClasses(selected, dataset.getOutputAsString());
+		
+    	printStatistics(before, after, dataset);
+    	
     	return selected;
     }
-    
+       
     /**
-     * Crea un diccionario en el que se mapea cada clase con una lista de indices
-     * de las instancias del data-set que son de la clase.
+     * Crea un diccionario en el que se mapea cada instancia de una lista
+     * a la clase a la que pertenece. La instancia se representa a través de
+     * su índice en el data-set.
      * 
+     * @param indexes, lista de los indices de las instancias a mapear.
+     * @param classes, array con las etiquetas de todas las clases del dataset.
      * @return dict, diccionario con los indices de las instancias de cada calse.
      */
-    private Map<String, List<Integer>> mapIndexesToClasses(String[] instances) {
+    private Map<String, List<Integer>> mapIndexesToClasses(List<Integer> indexes, String[] classes) {
     	
     	Map<String, List<Integer>> dict = new HashMap<String, List<Integer>>();
-    	
-    	for(int i = 0; i < instances.length; i++) {
-    		if(!dict.containsKey(instances[i]))
-    			dict.put(instances[i], new ArrayList<Integer>());
-    		
-    		dict.get(instances[i]).add(i);
+    	   	
+    	for(Integer i : indexes) {
+    		if(!dict.containsKey(classes[i]))
+    			dict.put(classes[i], new ArrayList<Integer>());
+    		dict.get(classes[i]).add(i);
     	}
     	return dict;
     }
@@ -184,13 +171,63 @@ public class Algorithm {
      */
     private List<Integer> randomSelection(List<Integer> indexes) {
     	
-    	int indexesToSelect = (int)(indexes.size() * percentage / 100);
+    	int indexesToSelect = (int)Math.round((indexes.size() * percentage / 100));
+    	
+    	// Crea una copia de la lista de indices y la referencia a la misma variable
+    	indexes = new ArrayList<Integer>(indexes);
     	List<Integer> selected = new ArrayList<Integer>();
+    	int index;
     	
-    	for(int i = 0; i < indexesToSelect; i++)
-    		selected.add(indexes.remove((int)(Math.random() * indexes.size())));
-    	
+    	for(int i = 0; i < indexesToSelect; i++) {
+    		index = (int)Math.round((Math.random() * (indexes.size() - 1)));
+    		selected.add(indexes.remove(index));
+    	}
     	return selected;
+    }
+    
+    /**
+     * Muestra una estadistica sobre las instancias del data-set antes y despues
+     * de aplicar seleccion de instancias.
+     * 
+     * Muestra el numero de instancias iniciales y seleccionadas de cada clase
+     * asi como el numero total de instancias iniciales y seleccionadas.
+     * 
+     * @param before, diccionario con las instancias de cada clase antes de la seleccion.
+     * @param after, diccionario con las instancias de cada clase despues de la seleccion.
+     * @param dataset, data-set inicial.
+     */
+    private void printStatistics(Map<String, List<Integer>> before,
+    		Map<String, List<Integer>> after, myDataset dataset) {
+    	
+    	int instancesBefore = 0;
+    	int instancesAfter = 0;
+    	int nBefore;
+    	int nAfter;
+    	
+    	System.out.println(">>>>>>>>>>>>\tSTATISTICS\t<<<<<<<<<<<<");
+    	System.out.println("\t\t\tBEFORE\tAFTER\t%");
+    	for(String classLabel : dataset.getClasses()) {
+    		nBefore = before.get(classLabel) == null ? 0 : before.get(classLabel).size();
+    		instancesBefore += nBefore;
+    		
+    		nAfter = after.get(classLabel) == null ? 0 : after.get(classLabel).size();
+    		instancesAfter += nAfter;
+    		
+     		System.out.printf("Instances of class %s:\t%d\t%d\t%.2f\n",
+     				classLabel, nBefore, nAfter, (double)nAfter / nBefore * 100);
+    	}
+    	
+ 		System.out.printf("Total instances:\t%d\t%d\t%.2f\n",
+ 				instancesBefore, instancesAfter, (double)instancesAfter/ instancesBefore* 100);
+    	
+    }
+    
+    private void writeSelected(List<Integer> indexes, myDataset dataset, String filename) {
+    	String output = dataset.copyHeader();
+    	for(Integer index :indexes)
+    		output += dataset.IS.getInstance(index) + "\n";
+    	
+    	Files.writeFile(filename, output);
     }
 
     /**
