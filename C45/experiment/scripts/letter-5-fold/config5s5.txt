@@ -1,0 +1,6 @@
+algorithm = InstanceSelection
+inputData = "../datasets/letter-5-fold/letter-5-5tra.dat" "../datasets/letter-5-fold/letter-5-5tra.dat" "../datasets/letter-5-fold/letter-5-5tst.dat" 
+outputData = "../datasets/letter-5-fold-IS/letter-5-5-IS.tra" "../datasets/letter-5-fold-IS/letter-5-5-IS.tst" 
+
+percentage = 80
+equalDistribution = True
