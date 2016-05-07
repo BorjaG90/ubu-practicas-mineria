@@ -32,6 +32,7 @@ public class Algorithm {
     double percentage;
     boolean equalDistribution;
     boolean preprocess;
+    String modifiedTr, modifiedTst; //Ruta de datasets modificados
         
 
     private boolean somethingWrong = false; //to check if everything is correct.
@@ -55,14 +56,12 @@ public class Algorithm {
         try {
         	InputTr=parameters.getTrainingInputFile();
         	InputTst=parameters.getTestInputFile();
-            System.out.println("\nReading the training set: " +
-                               InputTr);
-            train.readClassificationSet(parameters.getTrainingInputFile(), true);
+            System.out.println("\nReading the training set: " + InputTr);
+            train.readClassificationSet(InputTr, true);
             System.out.println("\nReading the validation set: " +
                                parameters.getValidationInputFile());
             val.readClassificationSet(parameters.getValidationInputFile(), false);
-            System.out.println("\nReading the test set: " +
-                               parameters.getTestInputFile());
+            System.out.println("\nReading the test set: " + InputTst);
             test.readClassificationSet(InputTst, false);
         } catch (IOException e) {
             System.err.println(
@@ -89,8 +88,8 @@ public class Algorithm {
         if (preprocess){
         	percentage = Double.parseDouble(parameters.getParameter(1));
         	equalDistribution = Boolean.parseBoolean(parameters.getParameter(2));
-        	modifiedTr=String.parseString(parameters.getParameter(3));
-        	modifiedTst=String.parseString(parameters.getParameter(4));
+        	modifiedTr=parameters.getParameter(3);
+        	modifiedTst=parameters.getParameter(4);
         	System.out.println("\nPercentage: " + percentage);
             System.out.println("Equal distribution: " + equalDistribution);
         }
@@ -101,9 +100,9 @@ public class Algorithm {
     public void preProcess(){
     	/*Instance Selection*/
     	System.out.println("\nProcessing Instance selection in  training dataset...");
-    	writeSelected(selectInstances(train), train, ModifiedTr);
+    	writeSelected(selectInstances(train), train, modifiedTr);
     	System.out.println("\nProcessing Instance selection in test dataset...");
-    	writeSelected(selectInstances(test), test, ModifiedTst);
+    	writeSelected(selectInstances(test), test, modifiedTst);
         
         System.out.println("\nAlgorithm Finished");
     }
@@ -113,24 +112,21 @@ public class Algorithm {
     public void classification(){
     	//If there's preprocess we load the modified datasets after the preprocessing -Borja
     	if (preprocess){
-    		
     		try {
-                System.out.println("\nReading the training set: " +
-                                   parameters.getTrainingInputFile());
-                train.readClassificationSet(parameters.getTrainingInputFile(), true);
-                System.out.println("\nReading the validation set: " +
-                                   parameters.getValidationInputFile());
-                val.readClassificationSet(parameters.getValidationInputFile(), false);
-                System.out.println("\nReading the test set: " +
-                                   parameters.getTestInputFile());
-                test.readClassificationSet(parameters.getTestInputFile(), false);
+                System.out.println("\nReading the training set: " + modifiedTr);
+                train.readClassificationSet(modifiedTr, true);
+                System.out.println("\nReading the validation set: " + modifiedTr);
+                val.readClassificationSet(modifiedTr, false);
+                System.out.println("\nReading the test set: " + modifiedTst);
+                test.readClassificationSet(modifiedTst, false);
             } catch (IOException e) {
                 System.err.println(
-                        "There was a problem while reading the input data-sets: " +
+                        "There was a problem while reading the modified data-sets: " +
                         e);
                 somethingWrong = true;
             }
     	}
+    	//Ejecutar C45
     }
     /**
      * It launches the algorithm
@@ -270,7 +266,6 @@ public class Algorithm {
     	
     	Files.writeFile(filename, output);
     }
-
     /**
      * It generates the output file from a given dataset and stores it in a file
      * @param dataset myDataset input dataset
