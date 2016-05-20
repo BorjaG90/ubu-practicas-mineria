@@ -71,7 +71,7 @@ public class InstanceSelection {
      * @return selected, sub-lista con el porcentaje de indices seleccionados
      * 			sobre el total de indices.
      */
-    public static List<Integer> randomSelection(List<Integer> indexes,double percentage) {
+    public static List<Integer> randomSelection(List<Integer> indexes, double percentage) {
     	
     	int indexesToSelect = (int)Math.round((indexes.size() * percentage / 100));
     	

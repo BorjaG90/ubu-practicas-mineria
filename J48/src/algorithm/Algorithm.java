@@ -56,11 +56,14 @@ public class Algorithm {
         try {
         	InputTr=parameters.getTrainingInputFile();
         	InputTst=parameters.getTestInputFile();
+        	
             System.out.println("\nReading the training set: " + InputTr);
             train.readClassificationSet(InputTr, true);
+            
             System.out.println("\nReading the validation set: " +
                                parameters.getValidationInputFile());
             val.readClassificationSet(parameters.getValidationInputFile(), false);
+            
             System.out.println("\nReading the test set: " + InputTst);
             test.readClassificationSet(InputTst, false);
         } catch (IOException e) {
