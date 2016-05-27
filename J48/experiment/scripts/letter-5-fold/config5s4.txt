@@ -1,6 +1,8 @@
-algorithm = InstanceSelection
-inputData = "../datasets/letter-5-fold/letter-5-4tra.dat" "../datasets/letter-5-fold/letter-5-4tra.dat" "../datasets/letter-5-fold/letter-5-4tst.dat" 
-outputData = "../datasets/letter-5-fold-IS/letter-5-4-IS.tra" "../datasets/letter-5-fold-IS/letter-5-4-IS.tst" 
+algorithm = C4.5
+inputData = "../datasets/letter-5-fold/letter-5-4tra.dat" "../datasets/letter-5-fold/letter-5-4tra.dat" "../datasets/letter-5-fold/letter-5-4tst.dat" "../datasets/letter-5-fold-IS/letter-5-4-IStra.dat" "../datasets/letter-5-fold-IS/letter-5-4-IStra.dat" "../datasets/letter-5-fold-IS/letter-5-4-IStst.dat"
+outputData = "../results/letter-5-fold/letter-5-4.tra" "../results/letter-5-fold/letter-5-4.tst" "../results/letter-5-fold/model-5-4.txt"
 
-percentage = 80
-equalDistribution = True
+preprocess = false
+confidence = 85
+sampleSize(%) = 80
+equalDistribution = true

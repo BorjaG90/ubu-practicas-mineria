@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.Vector;
 
 import keel.dataset.Attribute;
@@ -18,72 +18,162 @@ import keel.dataset.Instance;
 
 public class J48 {
 
-	public myDataset dataset;
+	private myDataset dataset;
 
 	private Node root;
+	
+	private String model;
 
 	private double confidence;
 
 	private double entropy;
 
 	class Node {
-		public boolean isLeaf;
-		public int type;
-		public int nominalValue;
-		public int realValue;
+		public String classLabel;
+		public boolean isLeaf = false;
+		public Data nodeData;
+		public double precision;
 		public Node left;
 		public Node right;
+	}
+	
+	class Data {
+		public String attrName;
+		public int attrIndex;
+		public int attrType;
+		public String attrValue;
+		
+		public Data() {}
+		
+		public Data(int attrIndex, int attrType, String attrName, String attrValue) {
+			this.attrIndex = attrIndex;
+			this.attrType = attrType;
+			this.attrValue = attrValue;
+			this.attrName = attrName;
+		}
 	}
 
 	public J48(myDataset dataset, double pruneConfidence) {
 		this.dataset = dataset;
 		this.confidence = pruneConfidence;
+		this.model = null;
 	}
 
 	public void buildClassifier() {
 
 		List<Instance> instances = Arrays.asList(dataset.IS.getInstances());
+		List<Set<String>> attributes = getAllAttributes(instances);
 
 		this.entropy = calculateEntropy(instances);
-		System.out.println("=======ENTROPIA: " + entropy + " ======");
-		root = buildTree(instances);
+		
+		this.root = buildTree(instances, attributes);
 	}
 	
-	//
-	private Node buildTree(List<Instance> instances) {
+	// REFACTORIZAR EL METODO
+	private Node buildTree(List<Instance> instances, List<Set<String>> attributes) {
 
 		Node root = new Node();
-		int numAttrs = Attributes.getInputNumAttributes();
+		Map<String, List<Instance>> instancesPerClass = filterByClass(instances);
 		
-		// crear el metodo check same class
-		if (checkSameClass(instances) || numAttr == 0) {
+		// Si todas las instancias son de la misma clase
+		if(instancesPerClass.size() == 1) {
+			root.classLabel = new ArrayList<String>(instancesPerClass.keySet()).get(0);
+			root.precision = instancesPerClass.get(root.classLabel).size() /
+					(double) instances.size();
 			root.isLeaf = true;
-			//AGREGAR MAS DATOS AL NODO
 			return root;
 		}
-
-		double gain;
-		double maxGain;
-		int attrIndex;
-		Map<Boolean, List<Instance>> dict;
 		
-		for (int i = 0; i < numAttrs; i++) {
-			Attribute attr = Attributes.getAttribute(i);
-			if(attr.getType() == Attribute.NOMINAL) {
-				List<String> values = new ArrayList<String>(attr.getNominalValuesList());
-				for(String value : values) {
-					dict = filterByNominalAttr(instances, i, value);
-				}
-			} else {
-				List<Double> values = getSplitPoints(instances, i);
-				for(Double value : values) {
-					dict = filterByNumericAttr(instances, i, value);
-
-				}
-			}				
+		// Si no hay atributos que procesar
+		if(attributes.size() == 0) {
+			root.classLabel = mostCommonClass(instancesPerClass);
+			root.precision = instancesPerClass.get(root.classLabel).size() / 
+					(double) instances.size();
+			root.isLeaf = true;
+			return root;
 		}
-
+		
+		// Obtiene el atributo-valor que mayor ganancia de informacion
+		// proporciona
+		
+		// REFACTORIZAR
+		Attribute attr;
+		double gain = 0, maxGain = 0;
+		for(int i = 0; i < attributes.size(); i++) {
+			attr = Attributes.getAttribute(i);
+			for(String value : attributes.get(i)) {
+				gain = calculateGain(instances, i, value);
+				if(maxGain < gain) {
+					maxGain = gain;
+					root.nodeData = new Data(i, attr.getType(), attr.getName(), value);
+				}
+			}
+		}
+		
+		int attrIndex = root.nodeData.attrIndex;
+		String attrValue = root.nodeData.attrValue;
+		Map<Boolean, List<Instance>> filteredInst;
+		
+		attributes.get(attrIndex).remove(attrValue);
+		if(attributes.get(attrIndex).size() == 0)
+			attributes.remove(attrIndex);
+		
+		if(root.nodeData.attrType == Attribute.NOMINAL)
+			filteredInst = filterByNominalAttr(instances, attrIndex, attrValue);
+		else
+			filteredInst = filterByNumericAttr(instances, attrIndex, Double.parseDouble(attrValue));
+		
+		List<Instance> list;
+		List<Set<String>> copyOfAttributes = new ArrayList<Set<String>>();
+		
+		// Copia la lista de atributos antes de las llamadas recursivas.
+		for(Set<String> values : attributes)
+			copyOfAttributes.add(new HashSet<String>(values));
+		
+		list = filteredInst.get(false);
+		if(list == null) {
+			root.right = new Node();
+			root.right.isLeaf = true;
+			root.right.classLabel = mostCommonClass(instancesPerClass);
+			// poner la precision en el nodo
+		} else {
+			attr = Attributes.getAttribute(root.nodeData.attrIndex);
+			root.right = buildTree(list, copyOfAttributes);
+		}
+		
+		list = filteredInst.get(true);
+		if(list == null) {
+			root.left = new Node();
+			root.left.isLeaf = true;
+			root.left.classLabel = mostCommonClass(instancesPerClass);
+			// poner la precision en el nodo
+		} else {
+			attr = Attributes.getAttribute(root.nodeData.attrIndex);
+			root.left = buildTree(filteredInst.get(true), copyOfAttributes);
+		}
+					
 		return root;
+	}
+	
+	/**
+	 * Devuelve la clase mas comun dentro de un conjunto de instancias
+	 * filtradas por clase;
+	 * 
+	 * @param instancesPerClass conjunto de instancias filtradas por clase
+	 * @return la clase mas comun dentro del conjunto
+	 */
+	private String mostCommonClass(Map<String, List<Instance>> instancesPerClass) {
+		
+		int freq = 0;
+		String classLabel = "";
+		
+		for(String label : instancesPerClass.keySet()) {
+			if(instancesPerClass.get(label).size() > freq) {
+				freq = instancesPerClass.get(label).size();
+				classLabel = label;
+			}
+		}
+		return classLabel;
 	}
 	
 	/**
@@ -93,15 +183,43 @@ public class J48 {
 	 * @param dict conjunto de instancias filtradas
 	 * @return ganancia de informacion
 	 */
-	private double calculateGain(Map<Boolean, List<Instance>> dict) {
+	private double calculateGain(List<Instance> instances, int attrIndex, String value) {
 
 		double gain = entropy;
-		double size = dict.get(true).size() + dict.get(false).size();
+		double p;
+		Map<Boolean, List<Instance>> dict;
+		Attribute attr = Attributes.getAttribute(attrIndex);
 		
-		for (Boolean key : dict.keySet())
-			gain -= dict.get(key).size() / size * calculateEntropy(dict.get(key));
-
+		if(attr.getType() == Attribute.NOMINAL)
+			dict = filterByNominalAttr(instances, attrIndex, value);
+		else
+			dict = filterByNumericAttr(instances, attrIndex, Double.parseDouble(value));
+		
+		for (Boolean key : dict.keySet()) {
+			p = dict.get(key).size() / (double) instances.size();
+			gain -= p * calculateEntropy(dict.get(key));
+		}
 		return gain;
+	}
+
+	/**
+	 * Calcula la entropia para un conjunto de instancias.
+	 * 
+	 * @param instances
+	 *            conjunto de instancias
+	 * @return la entropia para las instancias
+	 */
+	private double calculateEntropy(List<Instance> instances) {
+	
+		Map<String, List<Instance>> dict = filterByClass(instances);
+		double entropy = 0.0;
+		double p;
+		
+		for (String classLabel : dict.keySet()) {
+			p = (double) dict.get(classLabel).size() / instances.size();
+			entropy += p * (Math.log(p) / Math.log(2));
+		}
+		return -entropy;
 	}
 
 	// FILTRA LAS INSTANCIAS SEGUN EL VALOR DEL ATRIBUTO NOMINAL
@@ -135,50 +253,44 @@ public class J48 {
 		}
 		return dict;
 	}
-
-	/**
-	 * Calcula la entropia para un conjunto de instancias.
-	 * 
-	 * @param instances
-	 *            conjunto de instancias
-	 * @return la entropia para las instancias
-	 */
-	private double calculateEntropy(List<Instance> instances) {
-
-		Map<String, List<Instance>> dict = filterByClasses(instances);
-		double entropy = 0.0;
-		double p;
-
-		for (String label : dict.keySet()) {
-			p = (dict.get(label).size() / (double) instances.size());
-			entropy += -p * (Math.log(p) / Math.log(2));
-		}
-		return entropy;
-	}
-
-	/**
-	 * Crea un diccionario en el que se mapea cada instancia de una lista a la
-	 * clase a la que pertenece.
-	 * 
-	 * @param instances,
-	 *            lista de instancias.
-	 * @param classes,
-	 *            array con las etiquetas de todas las clases del dataset.
-	 * @return dict, diccionario con los indices de las instancias de cada
-	 *         calse.
-	 */
-	private Map<String, List<Instance>> filterByClasses(List<Instance> instances) {
-
+	
+	// TODO COMMENTAR
+	private Map<String, List<Instance>> filterByClass(List<Instance> instances) {
+		
 		Map<String, List<Instance>> dict = new HashMap<String, List<Instance>>();
-
+		
+		// Filtra las instancias por clase
 		for (Instance i : instances) {
-			String c = i.getOutputNominalValues(0); // Obtiene la clase de la
-													// instancia
+			String c = i.getOutputNominalValues(0);
 			if (!dict.containsKey(c))
 				dict.put(c, new ArrayList<Instance>());
 			dict.get(c).add(i);
 		}
 		return dict;
+	}
+
+	/**
+	 * Obtiene una lista con todos los atributos y los posibles valores de
+	 * cada atributo. Para los atributos continuos se obtienen los valores
+	 * de los puntos de corte donde se produce cambio de clase.
+	 * 
+	 * @param instances lista de instancias
+	 * @return lista de listas con los valores de cada atributo.
+	 */
+	private List<Set<String>> getAllAttributes(List<Instance> instances) {
+		
+		List<Set<String>> values = new ArrayList<Set<String>>();
+		int numAttrs = Attributes.getInputNumAttributes();
+		
+		for (int i = 0; i < numAttrs; i++) {
+			Attribute attr = Attributes.getAttribute(i);
+			if(attr.getType() == Attribute.NOMINAL)
+				values.add(i, new HashSet<String>(attr.getNominalValuesList()));
+			else 
+				values.add(i, getSplitPoints(instances, i));
+		}
+		
+		return values;
 	}
 
 	/**
@@ -209,21 +321,21 @@ public class J48 {
 				else
 					return 0;
 			}
-
 		});
 		return sorted;
 	}
 
 	/**
-	 * Obtiene los puntos de corte para un atributo continuo.
+	 * Obtiene los puntos de corte para un atributo continuo. Los puntos de corte
+	 * se representan como objetos de la clase String.
 	 * 
 	 * @param instances lista con las instancias
 	 * @param attrIndex indice del atributo continuo
 	 * @return lista con los puntos de corte
 	 */
-	private List<Double> getSplitPoints(List<Instance> instances, int attrIndex) {
+	private Set<String> getSplitPoints(List<Instance> instances, int attrIndex) {
 		
-		List<Double> values = new ArrayList<Double>();
+		Set<String> values = new HashSet<String>();
 		List<Instance> sorted = sortByAttribute(instances, attrIndex);
 		Instance instA, instB;
 		double cutPoint;
@@ -237,7 +349,7 @@ public class J48 {
 					instB.getOutputNominalValues(0))) {
 				cutPoint = (instA.getInputRealValues(attrIndex) +
 						instB.getInputRealValues(attrIndex)) / 2;
-				values.add(cutPoint);
+				values.add(String.valueOf(cutPoint));
 			}
 		}
 		
@@ -245,36 +357,59 @@ public class J48 {
 	}
 
 	// add parameter to the method
-	public String classifyInstance() {
-		return "";
+	public String classifyInstance(Instance instance) {
+		Node node = this.root;
+		boolean status;
+		
+		while(!node.isLeaf) {
+			if(node.nodeData.attrType == Attribute.NOMINAL) {
+				String value = instance.getInputNominalValues(node.nodeData.attrIndex);
+				status = value.equals(node.nodeData.attrValue);
+			} else  {
+				double value = instance.getInputRealValues(node.nodeData.attrIndex);
+				status = value <= Double.parseDouble(node.nodeData.attrValue);
+			}
+			
+			if(status)
+				node = node.left;
+			else
+				node = node.right;
+		}
+		
+		return node.classLabel;
 	}
 
 	public String getModel() {
-		return "";
+		if(this.model == null)
+			this.model = buildModel(root, 0);
+		return this.model;
 	}
 	
-	// private List<String> getValues(int attrIndex) {
-	//
-	// List<String> values = new ArrayList<String>();
-	// Attribute attr = Attributes.getAttribute(attrIndex);
-	// if(attr.getType() == Attribute.NOMINAL) {
-	// // TODO CONVERTIR A UNA LISTA BUENA
-	// values = new ArrayList<String>(attr.getNominalValuesList());
-	// } else {
-	// String[] classes = dataset.getClasses();
-	// // ORDENAR POR EL ATRIBUTO NUMERICO
-	// for(int i = 1; i < dataset.getnData(); i++) {
-	// if(classes[i - 1] != classes[i]) {
-	// // HACER PUNTO DE CORTE
-	// }
-	//
-	// // Obtiene las instancias consecutivas para calcular el corte
-	// dataset.IS.getInstance(i - 1).getInputRealValues(attrIndex);
-	// dataset.IS.getInstance(i).getInputRealValues(attrIndex);
-	// }
-	// }
-	//
-	// return values;
-	// }
+	private String buildModel(Node root, int treeLevel) {
 		
+		String result = "";
+		String tabs = "";
+		for(int i = 0; i < treeLevel; i++) 
+			tabs += "\t";
+		
+		if(root.isLeaf) {
+			result += tabs + "class = " + root.classLabel + "\n";
+			return result;
+		}
+		
+		result += tabs + "if " + root.nodeData.attrName;
+		if(root.nodeData.attrType == Attribute.NOMINAL)
+			result += " == ";
+		else 
+			result += " <= ";
+		
+		result += root.nodeData.attrValue + " then:\n";
+		result += buildModel(root.left, treeLevel + 1);
+		
+		result += tabs + "else:\n";
+		result += buildModel(root.right, treeLevel + 1);
+		
+		return result;
+	}
+			
 }
