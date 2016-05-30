@@ -1,8 +1,0 @@
-algorithm = C4.5
-inputData = "../datasets/contraceptive-5-fold/contraceptive-5-3tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-3tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-3tst.dat" "../datasets/contraceptive-5-fold-IS/contraceptive-5-3-IStra.dat" "../datasets/contraceptive-5-fold-IS/contraceptive-5-3-IStra.dat" "../datasets/contraceptive-5-fold-IS/contraceptive-5-3-IStst.dat"
-outputData = "../results/contraceptive-5-fold/contraceptive-5-3.tra" "../results/contraceptive-5-fold/contraceptive-5-3.tst" "../results/contraceptive-5-fold/model-5-3.txt"
-
-preprocess = false
-confidence = 85
-sampleSize(%) = 80
-equalDistribution = true

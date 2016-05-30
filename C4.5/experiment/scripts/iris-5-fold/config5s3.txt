@@ -1,0 +1,8 @@
+algorithm = C4.5
+inputData = "../datasets/iris-5-fold/iris-5-3tra.dat" "../datasets/iris-5-fold/iris-5-3tra.dat" "../datasets/iris-5-fold/iris-5-3tst.dat" "../datasets/iris-5-fold-IS/iris-5-3-IStra.dat" "../datasets/iris-5-fold-IS/iris-5-3-IStra.dat" "../datasets/iris-5-fold-IS/iris-5-3-IStst.dat"
+outputData = "../results/iris-5-fold/iris-5-3.tra" "../results/iris-5-fold/iris-5-3.tst" "../results/iris-5-fold/model-5-3.txt"
+
+preprocess = false
+confidence = 85
+sampleSize(%) = 80
+equalDistribution = true
