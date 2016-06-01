@@ -1,0 +1,6 @@
+algorithm = InstanceSelection
+inputData = "../datasets/dataset-clase/dataset-tra.dat" "../datasets/dataset-clase/dataset-tra.dat" "../datasets/dataset-clase/dataset-tst.dat"
+outputData = "../dataset/dataset-clase/dataset.tra" "../dataset/dataset-clase/dataset.tst"
+
+sampleSize(%) = 80
+equalDistribution = true

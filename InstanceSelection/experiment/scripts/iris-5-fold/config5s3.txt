@@ -1,0 +1,6 @@
+algorithm = InstanceSelection
+inputData = "../datasets/iris-5-fold/iris-5-3tra.dat" "../datasets/iris-5-fold/iris-5-3tra.dat" "../datasets/iris-5-fold/iris-5-3tst.dat"
+outputData = "../dataset/iris-5-fold-IS/iris-5-3-IS.tra" "../dataset/iris-5-fold-IS/iris-5-3-IS.tst"
+
+sampleSize(%) = 80
+equalDistribution = true

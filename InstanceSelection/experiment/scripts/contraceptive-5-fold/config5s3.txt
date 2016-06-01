@@ -1,6 +1,0 @@
-algorithm = InstanceSelection
-inputData = "../datasets/contraceptive-5-fold/contraceptive-5-3tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-3tra.dat" "../datasets/contraceptive-5-fold/contraceptive-5-3tst.dat" 
-outputData = "../datasets/contraceptive-5-fold-IS/contraceptive-5-3-IS.tra" "../datasets/contraceptive-5-fold-IS/contraceptive-5-3-IS.tst" 
-
-percentage = 80
-equalDistribution = True
