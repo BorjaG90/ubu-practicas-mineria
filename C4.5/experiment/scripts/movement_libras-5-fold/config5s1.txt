@@ -1,8 +1,7 @@
 algorithm = C4.5
 inputData = "../datasets/movement_libras-5-fold/movement_libras-5-1tra.dat" "../datasets/movement_libras-5-fold/movement_libras-5-1tra.dat" "../datasets/movement_libras-5-fold/movement_libras-5-1tst.dat" "../datasets/movement_libras-5-fold-IS/movement_libras-5-1-IStra.dat" "../datasets/movement_libras-5-fold-IS/movement_libras-5-1-IStra.dat" "../datasets/movement_libras-5-fold-IS/movement_libras-5-1-IStst.dat"
-outputData = "../results/movement_libras-5-fold/movement_libras-5-1.tra" "../results/movement_libras-5-fold/movement_libras-5-1.tst" "../results/movement_libras-5-fold/model-5-1.txt"
+outputData = "../results/movement_libras-5-fold/movement_libras-5-1.tra" "../results/movement_libras-5-fold/movement_libras-5-1.tst" "../results/movement_libras-5-fold/model-5-1.txt" "../results/movement_libras-5-fold-IS/movement_libras-5-1-IS.tra" "../results/movement_libras-5-fold-IS/movement_libras-5-1-IS.tst" "../results/movement_libras-5-fold-IS/model-5-1-IS.txt"
 
-preprocess = false
-confidence = 85
+preprocess = true
 sampleSize(%) = 80
 equalDistribution = true

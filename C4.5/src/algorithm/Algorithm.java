@@ -30,12 +30,9 @@ public class Algorithm {
 	private String modifiedTr, modifiedVal, modifiedTst; // Ficheros preprocesados
 	
 	private double sampling;
-	private double confidence;
 	private boolean equalDistribution;
 	private boolean preprocess;
 	
-	private int nClasses;
-
 	private boolean somethingWrong = false; // to check if everything is
 											// correct.
 
@@ -60,7 +57,8 @@ public class Algorithm {
 		train = new myDataset();
 		val = new myDataset();
 		test = new myDataset();
-
+		
+		// SIempre cargan el dataset original
 		inputTr = parameters.getTrainingInputFile();
 		inputVal = parameters.getValidationInputFile();
 		inputTst = parameters.getTestInputFile();
@@ -83,30 +81,31 @@ public class Algorithm {
 
 		outputTr = parameters.getTrainingOutputFile();
 		outputTst = parameters.getTestOutputFile();
-		
-		preprocess = Boolean.parseBoolean(parameters.getParameter(0));
-		confidence = Double.parseDouble(parameters.getParameter(1));
 		outputModel = parameters.getOutputFile(0);
 		
-		System.out.println("\n*----- Configuration -----*");
-		System.out.println("Preprocess: " + preprocess);
-		System.out.println("Confidence level (%): " + confidence);
-		System.out.println("Model output: " + outputModel);
+		preprocess = Boolean.parseBoolean(parameters.getParameter(0));
 
 		if (preprocess) {
 			modifiedTr = parameters.getInputFile(0);
 			modifiedVal = parameters.getInputFile(1);
 			modifiedTst = parameters.getInputFile(2);
 			
-			sampling = Double.parseDouble(parameters.getParameter(2));
-			equalDistribution = Boolean.parseBoolean(parameters.getParameter(3));
-
-			System.out.println("Processed training dataset: " + modifiedTr);
-			System.out.println("Processed validation dataset: " + modifiedVal);
-			System.out.println("Processed test dataset: " + modifiedTst);
+			outputTr = parameters.getOutputFile(1);
+			outputTst = parameters.getOutputFile(2);
+			outputModel = parameters.getOutputFile(3);
+			
+			sampling = Double.parseDouble(parameters.getParameter(1));
+			equalDistribution = Boolean.parseBoolean(parameters.getParameter(2));
+		}
+			
+		System.out.println("\n*----- Configuration -----*");
+		System.out.println("Model output: " + outputModel);
+		System.out.println("Preprocess: " + preprocess);
+		if(preprocess) {
 			System.out.println("Sample size (%): " + sampling);
 			System.out.println("Equal distribution: " + equalDistribution);
 		}
+		
 	}
 
 	/**
@@ -133,15 +132,16 @@ public class Algorithm {
 		List<Integer> instances;
 		System.out.println("\n*----- Instance Selection -----*");
 		
-		System.out.println("Processing training dataset...");
+		System.out.println("\nProcessing training dataset...");
 		instances = InstanceSelection.selectInstances(train, equalDistribution, sampling);
 		InstanceSelection.writeSelected(instances, train, modifiedTr);
 		
-		System.out.println("Processing test dataset...");
+		System.out.println("\nProcessing test dataset...");
 		instances = InstanceSelection.selectInstances(test, equalDistribution, sampling);
 		InstanceSelection.writeSelected(instances, test, modifiedTst);
 
-		System.out.println("Preprocessing finished");
+		System.out.println("Processing finished!");
+		Attributes.clearAll();
 		
 		try {
 			System.out.println("\nReading the processed training set: " + modifiedTr);
@@ -154,7 +154,6 @@ public class Algorithm {
 			System.err.println("There was a problem while reading " + "the modified data-sets: " + e);
 			somethingWrong = true;
 		}
-		
 	}
 
 	/**
@@ -164,7 +163,7 @@ public class Algorithm {
 		
 		System.out.println("\n*----- C4.5 Classification -----*");
 		
-		classifier = new C45(train, confidence);
+		classifier = new C45(train);
 		System.out.println("Building classifier...");
 		classifier.buildClassifier();
 		System.out.println("Done");

@@ -25,10 +25,11 @@ public class C45 {
 	
 	private String model;
 
-	private double confidence;
-
 	private double entropy;
-
+	
+	/**
+	 * Representa un nodo del clasificador.
+	 */
 	class Node {
 		public boolean isLeaf = false;
 		public double precision;
@@ -38,6 +39,9 @@ public class C45 {
 		public Node right;
 	}
 	
+	/**
+	 * Representa los datos de un atributo.
+	 */
 	class AttrData {
 		public String attrName;
 		public int attrIndex;
@@ -54,12 +58,14 @@ public class C45 {
 		}
 	}
 
-	public C45(myDataset dataset, double pruneConfidence) {
+	public C45(myDataset dataset) {
 		this.dataset = dataset;
-		this.confidence = pruneConfidence;
 		this.model = null;
 	}
-
+	
+	/**
+	 * Construye el clasificador.
+	 */
 	public void buildClassifier() {
 
 		List<Instance> instances = Arrays.asList(dataset.IS.getInstances());
@@ -69,7 +75,11 @@ public class C45 {
 		this.root = buildTree(instances, attributes);
 	}
 	
-	// add parameter to the method
+	/**
+	 * Clasifica una instancia.
+	 * @param instance la instancia a clasificar
+	 * @return la clase de la instancia
+	 */
 	public String classifyInstance(Instance instance) {
 		Node node = this.root;
 		boolean status;
@@ -91,13 +101,23 @@ public class C45 {
 		
 		return node.classLabel;
 	}
-
+	
+	/**
+	 * Obtiene el modelo del clasificador. 
+	 * @return una cadena con el modelo
+	 */
 	public String getModel() {
 		if(this.model == null)
 			this.model = buildModel(root, 0);
 		return this.model;
 	}
-
+	
+	/**
+	 * Construye el arbol del clasificador de forma recursiva.
+	 * @param instances instancias de entrenamiento
+	 * @param attributes lista de atributos y sus posibles valores
+	 * @return nodo raiz del arbol de clasificacion
+	 */
 	private Node buildTree(List<Instance> instances, List<Set<String>> attributes) {
 		
 		Node root = new Node();
@@ -108,7 +128,6 @@ public class C45 {
 		
 		// Si todas las instancias son de la misma clase O
 		// Si no hay mas atributos que procesar O
-		// Si la precision del nodo es igual o mayor que la confianza
 		if(frequencies.get(mostCommonClass) == instances.size() 
 		   || attributes.size() == 0) {
 			root.isLeaf = true;
@@ -127,13 +146,7 @@ public class C45 {
 		
 		// Filtra las instancias que tienen el valor del atributo de las que no
 		Map<Boolean, List<Instance>> filteredInst;
-		if(root.data.attrType == Attribute.NOMINAL) {
-			filteredInst = filterByNominalAttr(instances, root.data.attrIndex,
-					root.data.attrValue);
-		} else {
-			filteredInst = filterByNumericAttr(instances, root.data.attrIndex,
-					Double.parseDouble(root.data.attrValue));
-		}		
+		filteredInst = filterByAttribute(instances, root.data.attrIndex, root.data.attrValue);
 		
 		if(filteredInst.get(false) == null) {
 			root.right = new Node();
@@ -169,7 +182,7 @@ public class C45 {
 		
 		Attribute attr;
 		AttrData data = null;
-		double gain = 0, maxGain = Double.MIN_VALUE;
+		double gain = 0, maxGain = 0;
 		
 		for(int i = 0; i < attributes.size(); i++) {
 			attr = Attributes.getAttribute(i);
@@ -267,12 +280,8 @@ public class C45 {
 		double sum = 0;
 		double p;
 		Map<Boolean, List<Instance>> dict;
-		Attribute attr = Attributes.getAttribute(attrIndex);
 		
-		if(attr.getType() == Attribute.NOMINAL)
-			dict = filterByNominalAttr(instances, attrIndex, value);
-		else
-			dict = filterByNumericAttr(instances, attrIndex, Double.parseDouble(value));
+		dict = filterByAttribute(instances, attrIndex, value);
 		
 		for (Boolean key : dict.keySet()) {
 			p = dict.get(key).size() / (double) instances.size();
@@ -301,39 +310,47 @@ public class C45 {
 		return -entropy;
 	}
 
-	// FILTRA LAS INSTANCIAS SEGUN EL VALOR DEL ATRIBUTO NOMINAL
-	private Map<Boolean, List<Instance>> filterByNominalAttr(List<Instance> instances,
+	/**
+	 * Filtra las instancias por el valor de un atributo, separando
+	 * las que tienen el valor atributo especificado igual al valor 
+	 * proporcionado como parametro de las que no.
+	 * 
+	 * @param instances lista de instancias
+	 * @param attr indice del atributo a comprobar
+	 * @param value valor del atributo con el que comparar
+	 * @return
+	 */
+	private Map<Boolean, List<Instance>> filterByAttribute(List<Instance> instances,
 			int attr, String value) {
 		
 		Map<Boolean, List<Instance>> dict = new HashMap<Boolean, List<Instance>>();
 		boolean status;
+		int type = Attributes.getAttribute(attr).getType();
 		
-		for (Instance i : instances) {
-			status = i.getInputNominalValues(attr).equals(value);
-			if (!dict.containsKey(status))
-				dict.put(status, new ArrayList<Instance>());
-			dict.get(status).add(i);
+		if(type == Attribute.NOMINAL) {
+			for (Instance i : instances) {
+				status = i.getInputNominalValues(attr).equals(value);
+				if (!dict.containsKey(status))
+					dict.put(status, new ArrayList<Instance>());
+				dict.get(status).add(i);
+			}
+		} else {
+			double val = Double.parseDouble(value);
+			for (Instance i : instances) {
+				status = i.getInputRealValues(attr) <= val;
+				if (!dict.containsKey(status))
+					dict.put(status, new ArrayList<Instance>());
+				dict.get(status).add(i);
+			}
 		}
 		return dict;
 	}
-	
-	// FILTRA LAS INSTANCIAS SEGUN EL VALOR DEL ATRIBUTO NUMERICO
-	private Map<Boolean, List<Instance>> filterByNumericAttr(List<Instance> instances,
-			int attr, double value) {
 
-		Map<Boolean, List<Instance>> dict = new HashMap<Boolean, List<Instance>>();
-		boolean status;
-		
-		for (Instance i : instances) {
-			status = i.getInputRealValues(attr) <= value;
-			if (!dict.containsKey(status))
-				dict.put(status, new ArrayList<Instance>());
-			dict.get(status).add(i);
-		}
-		return dict;
-	}
-	
-	// TODO COMMENTAR
+	/**
+	 * Filtra una lista de instancias por la clase a la que pertenecen.
+	 * @param instances lista de instancias
+	 * @return diccionario que mapea las instancias de cada clase.
+	 */
 	private Map<String, List<Instance>> filterByClass(List<Instance> instances) {
 		
 		Map<String, List<Instance>> dict = new HashMap<String, List<Instance>>();

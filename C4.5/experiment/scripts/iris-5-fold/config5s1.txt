@@ -1,8 +1,7 @@
 algorithm = C4.5
 inputData = "../datasets/iris-5-fold/iris-5-1tra.dat" "../datasets/iris-5-fold/iris-5-1tra.dat" "../datasets/iris-5-fold/iris-5-1tst.dat" "../datasets/iris-5-fold-IS/iris-5-1-IStra.dat" "../datasets/iris-5-fold-IS/iris-5-1-IStra.dat" "../datasets/iris-5-fold-IS/iris-5-1-IStst.dat"
-outputData = "../results/iris-5-fold/iris-5-1.tra" "../results/iris-5-fold/iris-5-1.tst" "../results/iris-5-fold/model-5-1.txt"
+outputData = "../results/iris-5-fold/iris-5-1.tra" "../results/iris-5-fold/iris-5-1.tst" "../results/iris-5-fold/model-5-1.txt" "../results/iris-5-fold-IS/iris-5-1-IS.tra" "../results/iris-5-fold-IS/iris-5-1-IS.tst" "../results/iris-5-fold-IS/model-5-1-IS.txt"
 
-preprocess = false
-confidence = 85
+preprocess = true
 sampleSize(%) = 80
 equalDistribution = true

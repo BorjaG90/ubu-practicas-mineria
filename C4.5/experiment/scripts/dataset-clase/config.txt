@@ -1,8 +1,7 @@
 algorithm = C4.5
 inputData = "../datasets/dataset-clase/dataset-tra.dat" "../datasets/dataset-clase/dataset-tra.dat" "../datasets/dataset-clase/dataset-tst.dat" "../datasets/dataset-clase-IS/dataset-IS-tra.dat" "../datasets/dataset-clase-IS/dataset-IS-tra.dat" "../datasets/dataset-clase-IS/dataset-IS-tst.dat"
-outputData = "../results/dataset-clase/dataset.tra" "../results/dataset-clase/dataset.tst" "../results/dataset-clase/model-dataset-clase.txt"
+outputData = "../results/dataset-clase/dataset.tra" "../results/dataset-clase/dataset.tst" "../results/dataset-clase/model-dataset-clase.txt" "../results/dataset-clase-IS/dataset-IS.tra" "../results/dataset-clase-IS/dataset-IS.tst" "../results/dataset-clase-IS/model-dataset-clase-IS.txt"
 
-preprocess = false
-confidence = 85
+preprocess = true
 sampleSize(%) = 80
 equalDistribution = true

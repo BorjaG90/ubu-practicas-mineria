@@ -106,8 +106,8 @@ public class InstanceSelection {
     	int nBefore;
     	int nAfter;
     	
-    	System.out.println(">>>>>>>>>>>>\tSTATISTICS\t<<<<<<<<<<<<");
-    	System.out.println("\t\t\tBEFORE\tAFTER\t%");
+    	System.out.println(">>>>>>>>>>>>>>>>>>>> STATISTICS <<<<<<<<<<<<<<<<<<<<");
+    	System.out.println("\t\t\t\tBEFORE\tAFTER\t%");
     	for(String classLabel : dataset.getClasses()) {
     		nBefore = before.get(classLabel) == null ? 0 : before.get(classLabel).size();
     		instancesBefore += nBefore;
@@ -115,11 +115,11 @@ public class InstanceSelection {
     		nAfter = after.get(classLabel) == null ? 0 : after.get(classLabel).size();
     		instancesAfter += nAfter;
     		
-     		System.out.printf("Instances of class %s:\t%d\t%d\t%.2f\n",
+     		System.out.printf("Instances of class %s:\t\t%d\t%d\t%.2f\n",
      				classLabel, nBefore, nAfter, (double)nAfter / nBefore * 100);
     	}
     	
- 		System.out.printf("Total instances:\t%d\t%d\t%.2f\n",
+ 		System.out.printf("Total instances:\t\t%d\t%d\t%.2f\n",
  				instancesBefore, instancesAfter, (double)instancesAfter/ instancesBefore* 100);
     	
     }
