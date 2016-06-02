@@ -1,0 +1,67 @@
+if 14st_coordinate_ordinate <= 0.416 then:
+	if 28st_coordinate_abcissa <= 0.42 then:
+		if 1st_coordinate_ordinate <= 0.469 then:
+			class = 4
+		else:
+			if 1st_coordinate_abcissa <= 0.701 then:
+				if 1st_coordinate_abcissa <= 0.628 then:
+					class = 3
+				else:
+					class = 12
+			else:
+				class = 15
+	else:
+		if 25st_coordinate_ordinate <= 0.455 then:
+			class = 5
+		else:
+			if 1st_coordinate_ordinate <= 0.469 then:
+				class = 6
+			else:
+				class = 3
+else:
+	if 45st_coordinate_ordinate <= 0.337 then:
+		if 6st_coordinate_ordinate <= 0.777 then:
+			if 32st_coordinate_abcissa <= 0.508 then:
+				class = 11
+			else:
+				if 1st_coordinate_abcissa <= 0.502 then:
+					class = 1
+				else:
+					class = 8
+		else:
+			class = 13
+	else:
+		if 15st_coordinate_abcissa <= 0.373 then:
+			if 1st_coordinate_abcissa <= 0.502 then:
+				if 1st_coordinate_ordinate <= 0.469 then:
+					class = 14
+				else:
+					class = 15
+			else:
+				if 14st_coordinate_ordinate <= 0.659 then:
+					class = 2
+				else:
+					class = 1
+		else:
+			if 18st_coordinate_abcissa <= 0.665 then:
+				if 45st_coordinate_abcissa <= 0.327 then:
+					if 40st_coordinate_abcissa <= 0.228 then:
+						class = 7
+					else:
+						if 1st_coordinate_abcissa <= 0.502 then:
+							class = 2
+						else:
+							class = 10
+				else:
+					class = 9
+			else:
+				if 1st_coordinate_abcissa <= 0.824 then:
+					if 44st_coordinate_ordinate <= 0.527 then:
+						if 1st_coordinate_abcissa <= 0.806 then:
+							class = 15
+						else:
+							class = 7
+					else:
+						class = 7
+				else:
+					class = 12

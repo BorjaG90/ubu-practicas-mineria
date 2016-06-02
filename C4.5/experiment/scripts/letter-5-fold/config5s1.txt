@@ -3,5 +3,5 @@ inputData = "../datasets/letter-5-fold/letter-5-1tra.dat" "../datasets/letter-5-
 outputData = "../results/letter-5-fold/letter-5-1.tra" "../results/letter-5-fold/letter-5-1.tst" "../results/letter-5-fold/model-5-1.txt" "../results/letter-5-fold-IS/letter-5-1-IS.tra" "../results/letter-5-fold-IS/letter-5-1-IS.tst" "../results/letter-5-fold-IS/model-5-1-IS.txt"
 
 preprocess = true
-sampleSize(%) = 80
-equalDistribution = true
+sampleSize(%) = 25
+equalDistribution = false

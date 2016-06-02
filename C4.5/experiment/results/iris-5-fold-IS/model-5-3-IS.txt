@@ -1,0 +1,7 @@
+if PetalWidth <= 1.7 then:
+	if PetalLength <= 2.5 then:
+		class = Iris-setosa
+	else:
+		class = Iris-versicolor
+else:
+	class = Iris-virginica

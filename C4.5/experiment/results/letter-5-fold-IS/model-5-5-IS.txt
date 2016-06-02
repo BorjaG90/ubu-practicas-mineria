@@ -1,0 +1,2179 @@
+if Y-ege <= 2 then:
+	if X-ege <= 2 then:
+		if Y-bar <= 8 then:
+			if X2ybr <= 3 then:
+				if Y2bar <= 3 then:
+					class = A
+				else:
+					if Xybar <= 10.5 then:
+						if Y-bar <= 5 then:
+							class = L
+						else:
+							class = D
+					else:
+						class = J
+			else:
+				if Xegvy <= 7 then:
+					if X2bar <= 0 then:
+						class = I
+					else:
+						class = J
+				else:
+					if X-ege <= 0 then:
+						class = I
+					else:
+						if Y2bar <= 4 then:
+							if Y-box <= 2 then:
+								if X-bar <= 7 then:
+									if X-box <= 1 then:
+										class = H
+									else:
+										class = O
+								else:
+									class = Q
+							else:
+								if X2bar <= 4 then:
+									if X-box <= 1 then:
+										class = D
+									else:
+										if X-box <= 2 then:
+											class = P
+										else:
+											class = S
+								else:
+									class = O
+						else:
+							if Xy2br <= 6 then:
+								if X-box <= 2 then:
+									class = D
+								else:
+									class = F
+							else:
+								if X-bar <= 5 then:
+									class = C
+								else:
+									class = J
+		else:
+			if X2ybr <= 8 then:
+				if Yegvx <= 7 then:
+					if X2bar <= 0 then:
+						class = I
+					else:
+						if Y2bar <= 1 then:
+							class = P
+						else:
+							if Xy2br <= 6 then:
+								class = F
+							else:
+								class = S
+				else:
+					if X2bar <= 2 then:
+						class = F
+					else:
+						if Y-ege <= 1 then:
+							class = F
+						else:
+							class = P
+			else:
+				if Y2bar <= 4 then:
+					if X-ege <= 1 then:
+						if X-bar <= 3 then:
+							class = F
+						else:
+							if Y-bar <= 12 then:
+								class = Y
+							else:
+								class = T
+					else:
+						if Xybar <= 12 then:
+							if Y-bar <= 10.5 then:
+								if Y-bar <= 9.5 then:
+									if X-box <= 4 then:
+										class = V
+									else:
+										class = Y
+								else:
+									class = Y
+							else:
+								class = V
+						else:
+							class = F
+				else:
+					if Y-bar <= 10 then:
+						if X2bar <= 2 then:
+							if X-ege <= 0 then:
+								class = T
+							else:
+								class = Y
+						else:
+							class = C
+					else:
+						if X-bar <= 4 then:
+							if Xegvy <= 9.5 then:
+								class = F
+							else:
+								if X-bar <= 3 then:
+									if Xy2br <= 7 then:
+										class = Y
+									else:
+										class = V
+								else:
+									if Y-box <= 5 then:
+										if X-ege <= 0 then:
+											class = T
+										else:
+											class = Y
+									else:
+										if Y-box <= 8 then:
+											class = T
+										else:
+											if X-box <= 5 then:
+												class = F
+											else:
+												class = T
+						else:
+							if Y-bar <= 11 then:
+								if X2bar <= 1 then:
+									if Xybar <= 6 then:
+										class = Y
+									else:
+										if X-box <= 2 then:
+											if Width <= 2 then:
+												class = T
+											else:
+												class = Y
+										else:
+											class = T
+								else:
+									if X2bar <= 3 then:
+										class = T
+									else:
+										if X-bar <= 5 then:
+											class = F
+										else:
+											class = T
+							else:
+								class = T
+	else:
+		if X-ege <= 4 then:
+			if Xegvy <= 8 then:
+				if Xy2br <= 8.5 then:
+					if X-ege <= 3 then:
+						if Xegvy <= 7.5 then:
+							if Onpix <= 2 then:
+								class = A
+							else:
+								class = R
+						else:
+							if X2bar <= 9.5 then:
+								if Y-box <= 4 then:
+									class = H
+								else:
+									if Width <= 4 then:
+										class = O
+									else:
+										class = D
+							else:
+								class = H
+					else:
+						if X-box <= 2 then:
+							class = N
+						else:
+							class = U
+				else:
+					if X-bar <= 7 then:
+						if Onpix <= 3 then:
+							class = K
+						else:
+							class = U
+					else:
+						if Width <= 4 then:
+							class = J
+						else:
+							class = A
+			else:
+				if X2bar <= 4 then:
+					if Y2bar <= 5 then:
+						if X2ybr <= 9.5 then:
+							if X-box <= 1 then:
+								class = W
+							else:
+								if X-box <= 2 then:
+									class = U
+								else:
+									class = V
+						else:
+							class = V
+					else:
+						if Y-box <= 5 then:
+							class = U
+						else:
+							class = T
+				else:
+					if Y-bar <= 10 then:
+						if Y2bar <= 3 then:
+							if Y-box <= 4 then:
+								class = V
+							else:
+								class = H
+						else:
+							if X-ege <= 3 then:
+								class = U
+							else:
+								class = N
+					else:
+						if X-box <= 4 then:
+							class = T
+						else:
+							class = V
+		else:
+			if Xegvy <= 7 then:
+				if Xegvy <= 6 then:
+					if Y2bar <= 5 then:
+						if X-ege <= 5 then:
+							if X-box <= 5 then:
+								class = M
+							else:
+								class = U
+						else:
+							class = M
+					else:
+						class = U
+				else:
+					if Xybar <= 9.5 then:
+						if X2ybr <= 5 then:
+							class = M
+						else:
+							if X-box <= 1 then:
+								class = M
+							else:
+								class = U
+					else:
+						if X-ege <= 6 then:
+							class = N
+						else:
+							class = M
+			else:
+				if X2ybr <= 7 then:
+					if X-ege <= 6 then:
+						if Xegvy <= 11 then:
+							class = N
+						else:
+							if X-box <= 5 then:
+								class = V
+							else:
+								class = W
+					else:
+						if Y-box <= 9.5 then:
+							if High <= 6 then:
+								class = W
+							else:
+								class = U
+						else:
+							if X-bar <= 11 then:
+								class = M
+							else:
+								class = N
+				else:
+					if Y2bar <= 3 then:
+						if Xegvy <= 8 then:
+							class = N
+						else:
+							if Xy2br <= 5 then:
+								class = V
+							else:
+								if Y-bar <= 11 then:
+									class = W
+								else:
+									if Width <= 6 then:
+										class = V
+									else:
+										class = W
+					else:
+						if Xybar <= 9.5 then:
+							if X2bar <= 3 then:
+								if Y-box <= 9.5 then:
+									class = V
+								else:
+									class = W
+							else:
+								class = U
+						else:
+							if X-box <= 4 then:
+								class = M
+							else:
+								if X-bar <= 2 then:
+									class = W
+								else:
+									class = N
+else:
+	if Xy2br <= 8 then:
+		if X-ege <= 1 then:
+			if Y-ege <= 4 then:
+				if Y2bar <= 6 then:
+					if X2ybr <= 8 then:
+						if Xegvy <= 8 then:
+							if Y-box <= 0 then:
+								class = R
+							else:
+								class = B
+						else:
+							if Yegvx <= 7 then:
+								if Xybar <= 10.5 then:
+									class = P
+								else:
+									if X-box <= 3 then:
+										class = F
+									else:
+										class = P
+							else:
+								class = P
+					else:
+						if Y-ege <= 3 then:
+							if X-box <= 5 then:
+								class = F
+							else:
+								class = Y
+						else:
+							class = P
+				else:
+					if Xybar <= 7 then:
+						if X-bar <= 5 then:
+							class = L
+						else:
+							class = I
+					else:
+						if Yegvx <= 5 then:
+							if Y-bar <= 10 then:
+								if Onpix <= 1 then:
+									class = T
+								else:
+									class = Y
+							else:
+								if Y2bar <= 7 then:
+									class = F
+								else:
+									class = T
+						else:
+							if X-box <= 3 then:
+								class = S
+							else:
+								class = P
+			else:
+				if Xybar <= 5 then:
+					class = S
+				else:
+					if Y2bar <= 7 then:
+						if X2bar <= 3 then:
+							if Xybar <= 9.5 then:
+								class = Z
+							else:
+								if X-box <= 3 then:
+									class = S
+								else:
+									if X-bar <= 5 then:
+										class = F
+									else:
+										class = I
+						else:
+							if X-box <= 2 then:
+								class = B
+							else:
+								class = C
+					else:
+						if X2bar <= 6 then:
+							if X2ybr <= 5 then:
+								if Y-box <= 5 then:
+									class = S
+								else:
+									class = Z
+							else:
+								class = Z
+						else:
+							class = G
+		else:
+			if Y2bar <= 5 then:
+				if X-ege <= 5 then:
+					if Xegvy <= 7 then:
+						if Y-bar <= 5 then:
+							if X2ybr <= 2 then:
+								if Y2bar <= 3.5 then:
+									class = A
+								else:
+									if X-ege <= 3 then:
+										class = S
+									else:
+										if X-box <= 4 then:
+											class = A
+										else:
+											class = D
+							else:
+								if Y2bar <= 3 then:
+									if X-box <= 5 then:
+										class = S
+									else:
+										class = G
+								else:
+									if Y-ege <= 5 then:
+										if Xybar <= 6 then:
+											if X-box <= 5 then:
+												class = Q
+											else:
+												class = O
+										else:
+											class = O
+									else:
+										if Y-box <= 5 then:
+											class = Z
+										else:
+											class = R
+						else:
+							if Yegvx <= 8 then:
+								if Y-ege <= 5.5 then:
+									if Y-ege <= 3 then:
+										if X2ybr <= 5 then:
+											if X-box <= 2.5 then:
+												class = D
+											else:
+												class = N
+										else:
+											if X-box <= 2 then:
+												class = R
+											else:
+												class = U
+									else:
+										if Width <= 5 then:
+											class = R
+										else:
+											if X2ybr <= 5 then:
+												if Y-box <= 8 then:
+													class = O
+												else:
+													class = H
+											else:
+												class = G
+								else:
+									if X-bar <= 8 then:
+										if X2bar <= 4 then:
+											if X2ybr <= 6 then:
+												if Onpix <= 5 then:
+													class = J
+												else:
+													if X-box <= 9.5 then:
+														if X-box <= 3 then:
+															class = S
+														else:
+															class = X
+													else:
+														class = F
+											else:
+												class = I
+										else:
+											if X-bar <= 7.5 then:
+												if Xybar <= 6 then:
+													class = G
+												else:
+													class = B
+											else:
+												if Y-box <= 8 then:
+													class = A
+												else:
+													class = S
+									else:
+										if Y-box <= 4 then:
+											class = Z
+										else:
+											class = D
+							else:
+								if Y-ege <= 5 then:
+									if X-ege <= 3 then:
+										class = R
+									else:
+										if Onpix <= 5 then:
+											if Y-box <= 8 then:
+												class = N
+											else:
+												class = O
+										else:
+											class = R
+								else:
+									if X2bar <= 5 then:
+										if Y2bar <= 4 then:
+											class = K
+										else:
+											if X-box <= 4 then:
+												class = R
+											else:
+												if X-box <= 5 then:
+													if Y-box <= 9.5 then:
+														class = X
+													else:
+														class = F
+												else:
+													class = B
+									else:
+										if Y2bar <= 3 then:
+											class = R
+										else:
+											if Onpix <= 3 then:
+												class = R
+											else:
+												if X2ybr <= 5 then:
+													class = H
+												else:
+													if Y-box <= 9.5 then:
+														class = R
+													else:
+														class = Q
+					else:
+						if X2bar <= 6 then:
+							if Xegvy <= 8 then:
+								if Xy2br <= 7.5 then:
+									if Y-ege <= 7 then:
+										if Y-box <= 5 then:
+											if Y2bar <= 4 then:
+												if Y-box <= 1 then:
+													class = B
+												else:
+													class = P
+											else:
+												class = B
+										else:
+											if Y-bar <= 6 then:
+												if X2bar <= 4 then:
+													class = I
+												else:
+													if X-box <= 3 then:
+														class = J
+													else:
+														class = G
+											else:
+												if X2bar <= 3 then:
+													if Y2bar <= 4 then:
+														class = J
+													else:
+														if X-box <= 4 then:
+															class = X
+														else:
+															if X-box <= 5 then:
+																class = F
+															else:
+																class = I
+												else:
+													if Xy2br <= 5 then:
+														class = D
+													else:
+														if X-bar <= 8.5 then:
+															if Y-ege <= 4.5 then:
+																if X-box <= 3 then:
+																	class = X
+																else:
+																	if X-box <= 4 then:
+																		class = D
+																	else:
+																		class = P
+															else:
+																class = B
+														else:
+															if Y-box <= 6 then:
+																if X-box <= 2 then:
+																	class = D
+																else:
+																	class = Z
+															else:
+																class = J
+									else:
+										if X-bar <= 8 then:
+											if X-box <= 6 then:
+												if Xybar <= 6 then:
+													if X-box <= 3 then:
+														class = Y
+													else:
+														class = Z
+												else:
+													class = S
+											else:
+												if X-box <= 7 then:
+													class = F
+												else:
+													class = J
+										else:
+											if Onpix <= 6 then:
+												if High <= 6 then:
+													class = Z
+												else:
+													class = I
+											else:
+												class = D
+								else:
+									if Y-ege <= 5 then:
+										if Xybar <= 7 then:
+											if Y2bar <= 4 then:
+												if Xybar <= 6 then:
+													class = Q
+												else:
+													class = X
+											else:
+												if X2bar <= 5 then:
+													if X-box <= 1 then:
+														class = X
+													else:
+														class = G
+												else:
+													if X-box <= 2 then:
+														class = H
+													else:
+														class = P
+										else:
+											if Y-box <= 9.5 then:
+												if X2bar <= 3 then:
+													class = H
+												else:
+													if X-box <= 2 then:
+														class = O
+													else:
+														class = G
+											else:
+												if Width <= 4 then:
+													class = I
+												else:
+													class = A
+									else:
+										if Y-bar <= 6 then:
+											if High <= 5 then:
+												if X-box <= 4 then:
+													class = Y
+												else:
+													class = P
+											else:
+												class = L
+										else:
+											if Xybar <= 6 then:
+												if X-box <= 3 then:
+													class = M
+												else:
+													class = J
+											else:
+												if X-box <= 4 then:
+													class = S
+												else:
+													class = E
+							else:
+								if Y-ege <= 6 then:
+									if X2ybr <= 6 then:
+										if Xybar <= 9.5 then:
+											if X-box <= 4 then:
+												if Xybar <= 7 then:
+													if X2bar <= 4 then:
+														if Y-box <= 6 then:
+															class = B
+														else:
+															class = N
+													else:
+														class = M
+												else:
+													if Xy2br <= 5 then:
+														class = I
+													else:
+														if Y-box <= 6 then:
+															class = J
+														else:
+															class = F
+											else:
+												if Y-box <= 8 then:
+													class = J
+												else:
+													class = O
+										else:
+											if Xy2br <= 6 then:
+												if X-box <= 4.5 then:
+													if Y-box <= 6 then:
+														class = P
+													else:
+														class = F
+												else:
+													class = P
+											else:
+												if X-box <= 4 then:
+													class = J
+												else:
+													class = Q
+									else:
+										if Xybar <= 11 then:
+											if Y-bar <= 8 then:
+												if X2bar <= 3 then:
+													if X-bar <= 7.5 then:
+														if X-box <= 3 then:
+															class = N
+														else:
+															class = Y
+													else:
+														class = A
+												else:
+													if Y2bar <= 2 then:
+														class = V
+													else:
+														class = Y
+											else:
+												if X2ybr <= 9.5 then:
+													if Yegvx <= 6 then:
+														if Y2bar <= 2 then:
+															class = P
+														else:
+															if X-bar <= 7.5 then:
+																class = F
+															else:
+																class = Y
+													else:
+														class = P
+												else:
+													if High <= 7 then:
+														class = V
+													else:
+														if X-box <= 4 then:
+															class = F
+														else:
+															class = Y
+										else:
+											class = S
+								else:
+									if Y2bar <= 3 then:
+										if Y-box <= 7 then:
+											if X2bar <= 4 then:
+												if Onpix <= 4 then:
+													class = Z
+												else:
+													class = H
+											else:
+												if Y-box <= 5 then:
+													class = Y
+												else:
+													if Width <= 4 then:
+														class = S
+													else:
+														class = Z
+										else:
+											if Y-bar <= 7 then:
+												class = G
+											else:
+												if High <= 5 then:
+													class = F
+												else:
+													class = J
+									else:
+										if X-bar <= 7.5 then:
+											if Xegvy <= 9.5 then:
+												if Y-box <= 7 then:
+													if Y-bar <= 8 then:
+														class = S
+													else:
+														class = F
+												else:
+													if Y-box <= 8 then:
+														class = L
+													else:
+														class = C
+											else:
+												class = F
+										else:
+											if Yegvx <= 6 then:
+												if Xybar <= 7 then:
+													if X2ybr <= 5 then:
+														class = Z
+													else:
+														class = Y
+												else:
+													class = D
+											else:
+												if X2bar <= 3 then:
+													if Y-box <= 9.5 then:
+														class = X
+													else:
+														if X-box <= 5 then:
+															class = E
+														else:
+															class = F
+												else:
+													if High <= 9.5 then:
+														if X2bar <= 4 then:
+															class = S
+														else:
+															class = F
+													else:
+														class = Z
+						else:
+							if Y-ege <= 4 then:
+								if Xegvy <= 9.5 then:
+									if Xybar <= 6 then:
+										if X2ybr <= 5 then:
+											if Y-box <= 9.5 then:
+												class = O
+											else:
+												class = N
+										else:
+											class = Q
+									else:
+										if Y-ege <= 3 then:
+											if Xy2br <= 6 then:
+												if Width <= 5 then:
+													class = O
+												else:
+													class = D
+											else:
+												class = O
+										else:
+											if Xybar <= 8 then:
+												if Width <= 3 then:
+													class = P
+												else:
+													if High <= 5 then:
+														class = U
+													else:
+														class = Q
+											else:
+												class = O
+								else:
+									class = P
+							else:
+								if Yegvx <= 8 then:
+									if X-box <= 3 then:
+										class = S
+									else:
+										if X-box <= 4 then:
+											class = Y
+										else:
+											class = A
+								else:
+									if Y-bar <= 7 then:
+										if Width <= 5 then:
+											if Onpix <= 2 then:
+												class = Q
+											else:
+												class = B
+										else:
+											if X2ybr <= 5 then:
+												if X-box <= 5 then:
+													class = N
+												else:
+													class = O
+											else:
+												class = P
+									else:
+										class = R
+				else:
+					if X-ege <= 7 then:
+						if Y-ege <= 5 then:
+							if X2ybr <= 6 then:
+								if High <= 6 then:
+									if X2bar <= 3 then:
+										class = R
+									else:
+										if Y2bar <= 4 then:
+											class = N
+										else:
+											class = H
+								else:
+									if X-box <= 2 then:
+										class = P
+									else:
+										class = H
+							else:
+								if Yegvx <= 6 then:
+									if Y2bar <= 3 then:
+										class = W
+									else:
+										if X-box <= 5 then:
+											if X-bar <= 7.5 then:
+												class = N
+											else:
+												class = F
+										else:
+											class = A
+								else:
+									if Xegvy <= 8 then:
+										if Xybar <= 6 then:
+											class = U
+										else:
+											class = W
+									else:
+										if Y-box <= 7 then:
+											if Onpix <= 6 then:
+												class = V
+											else:
+												class = U
+										else:
+											class = V
+						else:
+							if X2bar <= 5 then:
+								if Xy2br <= 6 then:
+									if Y-box <= 8 then:
+										if X-box <= 3 then:
+											class = J
+										else:
+											if X-box <= 6 then:
+												class = P
+											else:
+												class = H
+									else:
+										if X-box <= 4 then:
+											class = D
+										else:
+											class = N
+								else:
+									if Y2bar <= 3 then:
+										if Xy2br <= 7.5 then:
+											if Xegvy <= 9.5 then:
+												class = H
+											else:
+												class = B
+										else:
+											if X2bar <= 4 then:
+												if X-box <= 3 then:
+													class = B
+												else:
+													if X-box <= 4 then:
+														class = R
+													else:
+														class = V
+											else:
+												class = G
+									else:
+										if X-bar <= 7.5 then:
+											if X2bar <= 4 then:
+												class = R
+											else:
+												if Yegvx <= 6 then:
+													class = B
+												else:
+													if Xegvy <= 7 then:
+														class = H
+													else:
+														class = V
+										else:
+											if Y-ege <= 8 then:
+												if Width <= 8 then:
+													if Yegvx <= 10 then:
+														if X-box <= 3 then:
+															class = K
+														else:
+															class = B
+													else:
+														if X-box <= 9.5 then:
+															class = K
+														else:
+															class = R
+												else:
+													if X-box <= 6 then:
+														if Y-box <= 8 then:
+															class = R
+														else:
+															class = K
+													else:
+														class = N
+											else:
+												class = V
+							else:
+								if X-bar <= 8 then:
+									if X2bar <= 6 then:
+										if Width <= 6 then:
+											class = F
+										else:
+											class = V
+									else:
+										class = M
+								else:
+									class = Y
+					else:
+						if X-ege <= 9 then:
+							if Yegvx <= 7 then:
+								if X-bar <= 8 then:
+									if Y2bar <= 3 then:
+										if High <= 8 then:
+											if X-box <= 4 then:
+												class = V
+											else:
+												class = W
+										else:
+											class = P
+									else:
+										if X2bar <= 5 then:
+											if Onpix <= 7 then:
+												class = B
+											else:
+												if X-box <= 4 then:
+													class = K
+												else:
+													class = N
+										else:
+											if Y-bar <= 4 then:
+												class = Y
+											else:
+												class = M
+								else:
+									if X2bar <= 3 then:
+										class = M
+									else:
+										class = U
+							else:
+								if Xegvy <= 8 then:
+									if X-box <= 5 then:
+										if Width <= 6 then:
+											if X-box <= 4 then:
+												class = H
+											else:
+												class = P
+										else:
+											class = H
+									else:
+										if X-box <= 6 then:
+											if Y-box <= 9.5 then:
+												class = R
+											else:
+												class = G
+										else:
+											class = K
+								else:
+									if High <= 6 then:
+										if Y-box <= 5 then:
+											class = W
+										else:
+											class = O
+									else:
+										if X-box <= 5 then:
+											class = Q
+										else:
+											class = G
+						else:
+							if Xegvy <= 9.5 then:
+								if X-box <= 7 then:
+									if X2ybr <= 6 then:
+										class = M
+									else:
+										if X-box <= 6 then:
+											class = U
+										else:
+											class = M
+								else:
+									if X-bar <= 9.5 then:
+										class = W
+									else:
+										class = M
+							else:
+								if Y-box <= 5 then:
+									class = Q
+								else:
+									if Width <= 9.5 then:
+										class = W
+									else:
+										class = M
+			else:
+				if Xy2br <= 7 then:
+					if Y-bar <= 8 then:
+						if Y-ege <= 4 then:
+							if X2bar <= 2 then:
+								if Y2bar <= 7.5 then:
+									if Y-bar <= 7 then:
+										if X-box <= 3 then:
+											class = B
+										else:
+											if High <= 7 then:
+												if Y2bar <= 6 then:
+													class = K
+												else:
+													class = X
+											else:
+												class = D
+									else:
+										class = F
+								else:
+									class = X
+							else:
+								if Yegvx <= 9.5 then:
+									if Xy2br <= 6 then:
+										if Width <= 7 then:
+											if Xegvy <= 7 then:
+												if X-bar <= 8 then:
+													class = R
+												else:
+													class = D
+											else:
+												if Xy2br <= 5 then:
+													class = D
+												else:
+													if Width <= 4 then:
+														class = D
+													else:
+														if Yegvx <= 7 then:
+															if Y-box <= 9.5 then:
+																class = H
+															else:
+																class = D
+														else:
+															if Xybar <= 7 then:
+																if Onpix <= 3 then:
+																	class = O
+																else:
+																	if X-bar <= 6 then:
+																		class = D
+																	else:
+																		class = O
+															else:
+																class = D
+										else:
+											if X-box <= 6 then:
+												if Y2bar <= 7.5 then:
+													class = H
+												else:
+													class = D
+											else:
+												if X-box <= 7 then:
+													if Y-box <= 10 then:
+														class = N
+													else:
+														class = P
+												else:
+													class = K
+									else:
+										if X2bar <= 7 then:
+											if Xybar <= 10.5 then:
+												if Xegvy <= 7 then:
+													if X-box <= 4 then:
+														if X-box <= 2 then:
+															class = D
+														else:
+															class = N
+													else:
+														if Y-box <= 7 then:
+															class = H
+														else:
+															class = J
+												else:
+													class = H
+											else:
+												if X-bar <= 9.5 then:
+													if X-box <= 6 then:
+														class = S
+													else:
+														class = X
+												else:
+													class = D
+										else:
+											class = O
+								else:
+									if X-box <= 5 then:
+										if Y-box <= 11 then:
+											class = R
+										else:
+											class = I
+									else:
+										if Y2bar <= 6 then:
+											if Y-bar <= 4 then:
+												class = D
+											else:
+												class = K
+										else:
+											class = X
+						else:
+							if Yegvx <= 8 then:
+								if Xybar <= 7 then:
+									if X2bar <= 4 then:
+										if Y-box <= 2 then:
+											if Y-box <= 1 then:
+												class = X
+											else:
+												class = R
+										else:
+											class = X
+									else:
+										if Yegvx <= 6 then:
+											class = D
+										else:
+											if X-box <= 2 then:
+												class = Z
+											else:
+												class = R
+								else:
+									if X-ege <= 3 then:
+										if Xy2br <= 6 then:
+											if X2bar <= 6 then:
+												if Onpix <= 3 then:
+													class = F
+												else:
+													if X-box <= 5 then:
+														class = B
+													else:
+														class = T
+											else:
+												if X-box <= 4 then:
+													class = S
+												else:
+													class = D
+										else:
+											if X-box <= 3 then:
+												class = Z
+											else:
+												if Y-box <= 10 then:
+													class = S
+												else:
+													class = C
+									else:
+										if Width <= 7 then:
+											if Xy2br <= 5 then:
+												class = Y
+											else:
+												if X-ege <= 6 then:
+													class = D
+												else:
+													class = B
+										else:
+											if X-box <= 9.5 then:
+												if X-box <= 6 then:
+													class = P
+												else:
+													class = R
+											else:
+												class = G
+							else:
+								if X-ege <= 2 then:
+									if Xegvy <= 7 then:
+										class = S
+									else:
+										if Yegvx <= 10.5 then:
+											class = B
+										else:
+											if Y-box <= 9.5 then:
+												class = G
+											else:
+												class = B
+								else:
+									if Y-ege <= 6 then:
+										if X2bar <= 6 then:
+											if Xybar <= 11 then:
+												if Y-bar <= 6 then:
+													if X2bar <= 3 then:
+														class = B
+													else:
+														class = D
+												else:
+													if X-ege <= 3 then:
+														class = R
+													else:
+														if X-box <= 4 then:
+															class = B
+														else:
+															if X-box <= 5 then:
+																class = R
+															else:
+																class = B
+											else:
+												if High <= 6 then:
+													class = F
+												else:
+													class = P
+										else:
+											if Y-box <= 9.5 then:
+												if X-box <= 4 then:
+													class = Q
+												else:
+													class = H
+											else:
+												class = D
+									else:
+										if Y-box <= 11 then:
+											if Y-ege <= 8 then:
+												if Xegvy <= 9.5 then:
+													class = B
+												else:
+													if X-box <= 4 then:
+														class = J
+													else:
+														class = X
+											else:
+												if Y-ege <= 9.5 then:
+													if X-box <= 4 then:
+														class = I
+													else:
+														class = L
+												else:
+													class = S
+										else:
+											class = Q
+					else:
+						if Yegvx <= 5 then:
+							if X2ybr <= 9.5 then:
+								if X2bar <= 4.5 then:
+									if Onpix <= 3 then:
+										class = T
+									else:
+										if Y-bar <= 10 then:
+											if Xegvy <= 9.5 then:
+												class = T
+											else:
+												class = F
+										else:
+											class = T
+								else:
+									class = D
+							else:
+								if X2bar <= 3 then:
+									class = Y
+								else:
+									if X-box <= 5 then:
+										class = F
+									else:
+										class = T
+						else:
+							if X2bar <= 4 then:
+								if Y-ege <= 3 then:
+									class = F
+								else:
+									if Xy2br <= 5 then:
+										if Y-box <= 11 then:
+											class = P
+										else:
+											class = I
+									else:
+										if Y2bar <= 8 then:
+											if High <= 5 then:
+												class = T
+											else:
+												class = F
+										else:
+											if Y-box <= 8 then:
+												class = S
+											else:
+												class = Z
+							else:
+								if X2ybr <= 5 then:
+									if X-bar <= 7.5 then:
+										class = B
+									else:
+										class = S
+								else:
+									if Y-box <= 7 then:
+										if X-box <= 5 then:
+											class = H
+										else:
+											class = P
+									else:
+										if Width <= 6 then:
+											class = C
+										else:
+											class = O
+				else:
+					if Y2bar <= 7 then:
+						if Y-ege <= 3 then:
+							if X-ege <= 2 then:
+								if X-box <= 2 then:
+									class = O
+								else:
+									class = C
+							else:
+								if X-ege <= 3 then:
+									if Y2bar <= 6 then:
+										if Yegvx <= 6 then:
+											class = U
+										else:
+											class = H
+									else:
+										if X2bar <= 2 then:
+											class = K
+										else:
+											if X-box <= 2 then:
+												class = U
+											else:
+												class = H
+								else:
+									if Y-box <= 7 then:
+										class = H
+									else:
+										if X2bar <= 5 then:
+											class = D
+										else:
+											class = N
+						else:
+							if Yegvx <= 8 then:
+								if X2bar <= 7 then:
+									if X-ege <= 3 then:
+										if Xybar <= 7 then:
+											if High <= 5 then:
+												if Y-box <= 3 then:
+													if Y-box <= 2 then:
+														class = H
+													else:
+														class = G
+												else:
+													if X-box <= 4 then:
+														class = X
+													else:
+														class = Y
+											else:
+												if X-bar <= 6 then:
+													class = R
+												else:
+													class = I
+										else:
+											if Y2bar <= 6 then:
+												if Onpix <= 6 then:
+													class = S
+												else:
+													class = H
+											else:
+												if X-box <= 3 then:
+													class = E
+												else:
+													if X-box <= 5 then:
+														class = O
+													else:
+														class = C
+									else:
+										if X2bar <= 3 then:
+											if Width <= 7 then:
+												class = X
+											else:
+												if Width <= 9.5 then:
+													if X-box <= 5 then:
+														class = H
+													else:
+														class = K
+												else:
+													class = H
+										else:
+											if Y-box <= 5 then:
+												if X-box <= 3 then:
+													class = H
+												else:
+													class = D
+											else:
+												if X-ege <= 5 then:
+													if X-box <= 5 then:
+														class = T
+													else:
+														class = J
+												else:
+													class = V
+								else:
+									if Xybar <= 6 then:
+										class = Q
+									else:
+										if High <= 5 then:
+											if X-box <= 3 then:
+												class = Q
+											else:
+												class = J
+										else:
+											class = O
+							else:
+								if Y-bar <= 7 then:
+									if X2bar <= 5 then:
+										if Y-ege <= 6.5 then:
+											if X2ybr <= 3 then:
+												if X-box <= 5 then:
+													class = K
+												else:
+													class = G
+											else:
+												if Width <= 8 then:
+													class = E
+												else:
+													class = K
+										else:
+											if Y-box <= 8 then:
+												if Y-box <= 7 then:
+													class = K
+												else:
+													class = L
+											else:
+												class = Q
+									else:
+										if Y-ege <= 5 then:
+											if Xybar <= 6 then:
+												if X-bar <= 6 then:
+													class = L
+												else:
+													class = Q
+											else:
+												class = T
+										else:
+											class = G
+								else:
+									if Y-ege <= 6 then:
+										if X2ybr <= 5 then:
+											class = R
+										else:
+											class = O
+									else:
+										if High <= 4 then:
+											class = L
+										else:
+											class = J
+					else:
+						if X2bar <= 4 then:
+							if Xybar <= 10.5 then:
+								if X-bar <= 6 then:
+									class = K
+								else:
+									if Y-ege <= 7 then:
+										class = X
+									else:
+										class = T
+							else:
+								if X2bar <= 3 then:
+									if Y-box <= 11 then:
+										if Width <= 4 then:
+											class = Z
+										else:
+											class = E
+									else:
+										if Y2bar <= 8 then:
+											class = X
+										else:
+											class = Z
+								else:
+									class = S
+						else:
+							if X2bar <= 6 then:
+								if Y-ege <= 6 then:
+									if X-box <= 4 then:
+										class = E
+									else:
+										if X-box <= 5 then:
+											class = S
+										else:
+											class = H
+								else:
+									class = Z
+							else:
+								if X-ege <= 2 then:
+									class = G
+								else:
+									if Y-bar <= 5 then:
+										if X-box <= 4 then:
+											class = Q
+										else:
+											class = O
+									else:
+										class = O
+	else:
+		if X-bar <= 7 then:
+			if X-ege <= 2 then:
+				if Y-ege <= 4 then:
+					if X2bar <= 3.5 then:
+						if Xybar <= 9.5 then:
+							if Y-bar <= 5 then:
+								class = L
+							else:
+								class = I
+						else:
+							if X2bar <= 1 then:
+								if X-box <= 2 then:
+									class = E
+								else:
+									class = X
+							else:
+								if Y-box <= 9.5 then:
+									class = E
+								else:
+									class = S
+					else:
+						if Y2bar <= 6 then:
+							if Y-ege <= 3 then:
+								if X-bar <= 6 then:
+									class = C
+								else:
+									class = G
+							else:
+								if Y2bar <= 2 then:
+									class = Q
+								else:
+									class = G
+						else:
+							if Xy2br <= 11 then:
+								if Y2bar <= 7 then:
+									if Y-box <= 9.5 then:
+										class = G
+									else:
+										class = C
+								else:
+									class = C
+							else:
+								class = C
+				else:
+					if Y-ege <= 7 then:
+						if X2bar <= 6 then:
+							if Y2bar <= 6 then:
+								if X-bar <= 6 then:
+									class = G
+								else:
+									if Width <= 4 then:
+										if Width <= 3 then:
+											class = E
+										else:
+											class = X
+									else:
+										class = L
+							else:
+								if Xegvy <= 8 then:
+									if X-box <= 6 then:
+										if Xybar <= 6 then:
+											if X-box <= 1 then:
+												class = Z
+											else:
+												class = E
+										else:
+											class = E
+									else:
+										if High <= 5 then:
+											class = C
+										else:
+											class = E
+								else:
+									if Y2bar <= 7 then:
+										if Width <= 5 then:
+											class = E
+										else:
+											class = S
+									else:
+										if X-bar <= 6 then:
+											class = E
+										else:
+											class = Z
+						else:
+							if Y-bar <= 9.5 then:
+								if X-box <= 2 then:
+									class = E
+								else:
+									class = G
+							else:
+								class = R
+					else:
+						if Y-bar <= 7 then:
+							if X2bar <= 3.5 then:
+								class = X
+							else:
+								if X-bar <= 3 then:
+									class = E
+								else:
+									class = S
+						else:
+							if X2bar <= 4.5 then:
+								if X-box <= 3 then:
+									class = L
+								else:
+									class = E
+							else:
+								if X-bar <= 3 then:
+									class = E
+								else:
+									class = Z
+			else:
+				if X2bar <= 4 then:
+					if Y2bar <= 5 then:
+						if Y-ege <= 4.5 then:
+							if X2ybr <= 7 then:
+								class = C
+							else:
+								if X-bar <= 5 then:
+									if Y-bar <= 7 then:
+										class = M
+									else:
+										class = H
+								else:
+									if X-box <= 5 then:
+										class = A
+									else:
+										class = V
+						else:
+							if X2ybr <= 5 then:
+								if Y-bar <= 5 then:
+									if X-box <= 4 then:
+										class = G
+									else:
+										class = Q
+								else:
+									if High <= 6 then:
+										class = R
+									else:
+										if X-box <= 6 then:
+											class = K
+										else:
+											class = R
+							else:
+								if Yegvx <= 7 then:
+									if Xegvy <= 9.5 then:
+										if X-box <= 4.5 then:
+											if High <= 4 then:
+												class = T
+											else:
+												class = Q
+										else:
+											class = N
+									else:
+										if X-box <= 4 then:
+											if Y-box <= 6 then:
+												class = C
+											else:
+												class = L
+										else:
+											if Width <= 7 then:
+												class = X
+											else:
+												class = Y
+								else:
+									if Y-bar <= 5 then:
+										class = L
+									else:
+										if Xegvy <= 9.5 then:
+											if Xybar <= 6 then:
+												if X-box <= 5 then:
+													class = E
+												else:
+													class = X
+											else:
+												if Width <= 4 then:
+													if Y-box <= 9.5 then:
+														class = C
+													else:
+														class = E
+												else:
+													class = C
+										else:
+											if Y-ege <= 7 then:
+												if Y-box <= 6 then:
+													class = E
+												else:
+													if X2bar <= 2 then:
+														class = X
+													else:
+														class = C
+											else:
+												class = E
+					else:
+						if Y-ege <= 4 then:
+							if Y2bar <= 7 then:
+								if Onpix <= 3 then:
+									if Y-box <= 10 then:
+										class = K
+									else:
+										if X-box <= 5 then:
+											class = X
+										else:
+											class = K
+								else:
+									if Xy2br <= 10.5 then:
+										if X2bar <= 2 then:
+											if Width <= 9.5 then:
+												class = K
+											else:
+												class = H
+										else:
+											if Y-box <= 11 then:
+												if Xybar <= 10.5 then:
+													class = H
+												else:
+													class = E
+											else:
+												class = K
+									else:
+										class = K
+							else:
+								if Xy2br <= 9 then:
+									if Y-bar <= 9.5 then:
+										if X-bar <= 4 then:
+											if Y-box <= 8 then:
+												class = E
+											else:
+												class = X
+										else:
+											class = X
+									else:
+										class = Y
+								else:
+									if Y-box <= 9.5 then:
+										class = K
+									else:
+										if Y-bar <= 7 then:
+											class = K
+										else:
+											class = X
+						else:
+							if Yegvx <= 8.5 then:
+								if Xy2br <= 10.5 then:
+									if Xybar <= 9.5 then:
+										if Xybar <= 6 then:
+											class = X
+										else:
+											if X-box <= 9.5 then:
+												if Xegvy <= 8 then:
+													class = T
+												else:
+													if Y-box <= 6 then:
+														class = T
+													else:
+														class = E
+											else:
+												class = R
+									else:
+										if Yegvx <= 5 then:
+											if X-bar <= 5 then:
+												class = E
+											else:
+												class = Z
+										else:
+											if Width <= 9.5 then:
+												class = E
+											else:
+												class = H
+								else:
+									if Width <= 8 then:
+										if Y-ege <= 7 then:
+											class = L
+										else:
+											class = E
+									else:
+										class = K
+							else:
+								if Xegvy <= 6 then:
+									if X-box <= 4 then:
+										class = X
+									else:
+										class = K
+								else:
+									class = K
+				else:
+					if Yegvx <= 8 then:
+						if Y2bar <= 5 then:
+							if Y-ege <= 5 then:
+								if Y-box <= 4 then:
+									class = G
+								else:
+									if Xybar <= 5 then:
+										class = U
+									else:
+										class = O
+							else:
+								if X2ybr <= 7 then:
+									if X2bar <= 5 then:
+										class = O
+									else:
+										class = G
+								else:
+									if High <= 7 then:
+										class = T
+									else:
+										class = Q
+						else:
+							if Xegvy <= 8 then:
+								if Y2bar <= 7 then:
+									if Xegvy <= 7.5 then:
+										if X-box <= 5 then:
+											class = D
+										else:
+											if X-box <= 6 then:
+												class = Q
+											else:
+												class = O
+									else:
+										if High <= 6 then:
+											if X-bar <= 5.5 then:
+												class = E
+											else:
+												class = H
+										else:
+											class = C
+								else:
+									class = E
+							else:
+								if X-bar <= 5 then:
+									if X2ybr <= 9.5 then:
+										class = U
+									else:
+										class = K
+								else:
+									if X2ybr <= 6 then:
+										if X-box <= 4 then:
+											class = Z
+										else:
+											class = G
+									else:
+										if X-box <= 5 then:
+											class = T
+										else:
+											class = C
+					else:
+						if Xegvy <= 7 then:
+							if X2ybr <= 5 then:
+								if Y-bar <= 6.5 then:
+									if Width <= 6 then:
+										class = L
+									else:
+										class = H
+								else:
+									class = R
+							else:
+								if Y-bar <= 6 then:
+									if X-box <= 6 then:
+										class = K
+									else:
+										class = L
+								else:
+									if X-box <= 5 then:
+										class = G
+									else:
+										class = C
+						else:
+							if Y-ege <= 5 then:
+								if Y2bar <= 3 then:
+									if Y-box <= 4 then:
+										class = Q
+									else:
+										class = K
+								else:
+									if Y2bar <= 6 then:
+										if X-bar <= 5 then:
+											if X-box <= 4 then:
+												class = C
+											else:
+												class = U
+										else:
+											if X2bar <= 7 then:
+												if Y-ege <= 3 then:
+													class = H
+												else:
+													if X-box <= 4 then:
+														class = G
+													else:
+														class = H
+											else:
+												class = C
+									else:
+										if Y-box <= 7 then:
+											class = K
+										else:
+											if X-box <= 4 then:
+												class = E
+											else:
+												class = K
+							else:
+								if Xegvy <= 8 then:
+									if X-bar <= 5 then:
+										if X-box <= 4 then:
+											class = P
+										else:
+											class = K
+									else:
+										class = E
+								else:
+									if X-ege <= 5 then:
+										if Y-box <= 6 then:
+											class = F
+										else:
+											class = P
+									else:
+										if X-box <= 5 then:
+											class = C
+										else:
+											if X-box <= 6 then:
+												class = V
+											else:
+												class = M
+		else:
+			if X2bar <= 3 then:
+				if Y-bar <= 4 then:
+					if Y2bar <= 4 then:
+						if X2ybr <= 4 then:
+							if Y2bar <= 3 then:
+								class = A
+							else:
+								class = S
+						else:
+							if Y-box <= 13 then:
+								class = L
+							else:
+								class = S
+					else:
+						if Y-box <= 9.5 then:
+							class = Q
+						else:
+							class = L
+				else:
+					if Xybar <= 10.5 then:
+						if Xegvy <= 8 then:
+							if X2bar <= 2 then:
+								if Width <= 4 then:
+									class = H
+								else:
+									class = K
+							else:
+								if Y-box <= 7 then:
+									class = H
+								else:
+									class = L
+						else:
+							if Y2bar <= 3 then:
+								class = V
+							else:
+								if X-box <= 5 then:
+									if Y-box <= 7 then:
+										class = S
+									else:
+										class = E
+								else:
+									class = Y
+					else:
+						if Yegvx <= 9.5 then:
+							if Onpix <= 4 then:
+								class = Z
+							else:
+								if Y-bar <= 5 then:
+									class = Z
+								else:
+									class = E
+						else:
+							class = E
+			else:
+				if Y-ege <= 6 then:
+					if Xybar <= 9.5 then:
+						if X-ege <= 3 then:
+							if Yegvx <= 9.5 then:
+								if Yegvx <= 6 then:
+									class = U
+								else:
+									if Y-box <= 10 then:
+										if Y-ege <= 3 then:
+											if X-ege <= 2 then:
+												if Xybar <= 6 then:
+													class = Q
+												else:
+													if X2bar <= 5 then:
+														class = Q
+													else:
+														class = O
+											else:
+												if X-box <= 2 then:
+													class = O
+												else:
+													class = H
+										else:
+											class = Q
+									else:
+										class = E
+							else:
+								if Xybar <= 5 then:
+									class = Q
+								else:
+									if Onpix <= 3 then:
+										class = G
+									else:
+										class = Q
+						else:
+							if Onpix <= 6 then:
+								if X2bar <= 6 then:
+									if X-box <= 4 then:
+										class = G
+									else:
+										if X-box <= 9.5 then:
+											if X-box <= 7 then:
+												class = V
+											else:
+												class = S
+										else:
+											class = N
+								else:
+									if X-ege <= 4 then:
+										class = Q
+									else:
+										if X-box <= 9.5 then:
+											class = U
+										else:
+											class = M
+							else:
+								if Y-box <= 8 then:
+									if Y2bar <= 1 then:
+										class = Q
+									else:
+										class = Y
+								else:
+									if Y2bar <= 5 then:
+										if X2ybr <= 7 then:
+											class = O
+										else:
+											class = C
+									else:
+										class = H
+					else:
+						if Y2bar <= 3 then:
+							if Y-bar <= 5 then:
+								class = A
+							else:
+								class = S
+						else:
+							if Y-bar <= 4 then:
+								if Y-bar <= 2 then:
+									class = L
+								else:
+									if Y-box <= 14 then:
+										class = D
+									else:
+										class = S
+							else:
+								if X2bar <= 6 then:
+									if X-box <= 5 then:
+										class = G
+									else:
+										class = B
+								else:
+									class = O
+				else:
+					if Yegvx <= 8 then:
+						if Onpix <= 5 then:
+							if Y-bar <= 7 then:
+								class = S
+							else:
+								class = I
+						else:
+							if Y-box <= 8 then:
+								if X2bar <= 4 then:
+									class = Y
+								else:
+									class = I
+							else:
+								if Y-box <= 9.5 then:
+									class = Q
+								else:
+									class = A
+					else:
+						if X2ybr <= 7 then:
+							if X2ybr <= 4 then:
+								if Y-bar <= 5 then:
+									class = Q
+								else:
+									class = B
+							else:
+								if Y-ege <= 8 then:
+									if Y2bar <= 3 then:
+										class = E
+									else:
+										if Xybar <= 9.5 then:
+											if X-box <= 3 then:
+												class = L
+											else:
+												class = G
+										else:
+											class = E
+								else:
+									if X-bar <= 8 then:
+										class = G
+									else:
+										class = S
+						else:
+							if Y-box <= 8 then:
+								if Width <= 6 then:
+									class = Q
+								else:
+									class = Y
+							else:
+								if High <= 9.5 then:
+									class = C
+								else:
+									class = Q

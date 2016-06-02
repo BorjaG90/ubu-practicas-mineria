@@ -1,0 +1,13 @@
+if PetalLength <= 4.65 then:
+	if PetalLength <= 2.45 then:
+		class = Iris-setosa
+	else:
+		class = Iris-versicolor
+else:
+	if SepalWidth <= 2.5 then:
+		if SepalLength <= 6.3 then:
+			class = Iris-versicolor
+		else:
+			class = Iris-virginica
+	else:
+		class = Iris-virginica
